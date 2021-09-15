@@ -1,0 +1,14 @@
+en:
+    site.name: 'JCSASIA'
+    nav.home: 'Home'
+    nav.video: 'Video'
+    title.home: 'Welcome Home'
+    MORE: 'MORE'
+    'No posts found': 'No posts found'
+cn:
+    site.name: 'JCSASIA'
+    nav.home: '首页'
+    nav.video: '视频'
+    title.home: '欢迎光临'
+    MORE: '更多'
+    'No posts found': '暂无数据'

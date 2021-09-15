@@ -1,0 +1,138 @@
+description = "Default"
+
+[localePicker]
+forceUrl = 0
+
+[session]
+security = "all"
+
+[staticMenu]
+code = "main"
+==
+<?php
+function onStart()
+{
+	$this['locale'] = App::getLocale();
+}
+?>
+==
+{% set CurrentLanguage = locale %}
+{% spaceless %}
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ 'assets/images/favicon.ico'|theme }}" type="image/x-icon">
+                
+    <title>{{ this.theme.site_name }}</title>
+    
+    {% styles %}
+
+    <link href="{{ [
+        'assets/iconfont/iconfont.css',
+        'assets/dist/style.css',
+    ]|theme }}" rel="stylesheet"> 
+    {% placeholder head %}
+    </head>
+    <body>
+
+
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="top_menu row m0">
+                <div class="container">
+                 <div class="float-left">
+                     <!-- <ul class="list header_social">
+                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                         <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                         <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                     </ul> -->
+                 </div>
+                 <div class="float-right">
+                     <a class="dn_btn" href="/submit-showcase">我要发布</a>
+                     {% if user %}
+                        <a class="dn_btn" href="/account/login.htm">Hello {{ user.name }}</a>
+                        <a class="dn_btn" href="" data-request="onLogout" data-request-data="redirect: '/'">退出 <i class="iconfont iconsign-out"></i></a>
+                    {% else %}
+                        <a class="dn_btn" href="/account/login.htm">注册</a>
+                        <a class="dn_btn" href="/account/login.htm">登录</a>
+                    {% endif %}
+                     {% component "localePicker" %}
+                 </div>
+                </div>	
+            </div>	
+         <div class="main_menu">
+             <nav class="navbar navbar-expand-lg navbar-light">
+                 <div class="container">
+                     <!-- Brand and toggle get grouped for better mobile display -->
+                     <a class="navbar-brand logo_h" href="/"><img width="150" src="{{ 'assets/images/logo.png'|theme }}" alt=""></a>
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                     </button>
+                     <!-- Collect the nav links, forms, and other content for toggling -->
+                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        
+                        {% if CurrentLanguage == "en" %}
+                           {% component 'staticMenu' %}
+                        {% else %}
+                            {% component 'staticMenu' %}
+                        {% endif %}
+                     </div> 
+                 </div>
+             </nav>
+         </div>
+     </header>
+     <!--================Header Menu Area =================-->
+
+
+     {% if this.page.id == 'index' %}
+        {% if this.theme.frontend_header_type == 'slideshow' %}
+            {% partial "header/slideshow" %}
+        {% endif %}
+        
+        {% if this.theme.frontend_header_type == 'image' %}
+            {% partial "header/image" %}
+        {% endif %}
+        
+        {% if this.theme.frontend_header_type == 'video' %}
+            {% partial "header/video" %}
+        {% endif %}
+    {% endif %}
+
+        {% page %}
+       
+                
+     <!-- Footer Widgets -->
+     {% partial "footer/widgets" %}
+      
+        
+        <script src="{{ [
+            'assets/js/jquery-3.5.1.js',
+            'assets/js/popper.js',
+            'assets/js/bootstrap.min.js',
+            'assets/js/stellar.js',
+            'assets/vendors/lightbox/simpleLightbox.min.js',
+            'assets/vendors/nice-select/js/jquery.nice-select.min.js',
+            'assets/vendors/isotope/imagesloaded.pkgd.min.js',
+            'assets/vendors/isotope/isotope.pkgd.min.js',
+            'assets/vendors/owl-carousel/owl.carousel.min.js',
+            'assets/vendors/jquery-ui/jquery-ui.js',
+            'assets/js/jquery.ajaxchimp.min.js',
+            'assets/vendors/popup/jquery.magnific-popup.min.js',
+            'assets/js/mail-script.js',
+            'assets/vendors/counter-up/jquery.waypoints.min.js',
+            'assets/vendors/counter-up/jquery.counterup.js',
+
+            'assets/dist/main.js'
+            ]|theme }}"></script>        
+        {% framework extras %}
+        {% scripts %} 
+
+    </body>
+</html>
+{% endspaceless %}

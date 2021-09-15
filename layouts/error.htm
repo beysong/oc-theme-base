@@ -1,0 +1,37 @@
+==
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{{ 'assets/images/favicon.png'|theme }}" type="image/png">
+                    
+        <title>{{ this.theme.site_name }}</title>
+        
+        {% styles %}
+        <link ref="stylesheet" href="//at.alicdn.com/t/font_2212952_2iyewuim8nu.css" />
+        <link href="{{ [
+            'assets/iconfont/iconfont.css',
+            'assets/css/bootstrap.css'
+        ]|theme }}" rel="stylesheet">
+        
+        {% placeholder head %}
+        </head>
+    <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+        <main>
+            {% page %}
+        </main>
+
+        <script src="{{ [
+            'assets/js/jquery-3.3.1.min.js',
+            'assets/js/popper.js',
+            'assets/js/bootstrap.min.js'
+            ]|theme }}"></script>        
+        {% framework extras %}
+        {% scripts %} 
+
+    </body>
+</html>
+{% endspaceless %}

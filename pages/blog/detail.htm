@@ -1,0 +1,27 @@
+title = "Blog Detail"
+url = "/detail/:slug"
+layout = "main"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/blog"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/blog"
+==
+<section class="module-small">
+    <div class="container">
+        <div class="row">
+            <div  class="col-sm-4 col-md-3 blog_right_sidebar">
+                {% component 'blogCategories' %}
+                
+            </div>
+            <div class="col-sm-8 col-sm-offset-1">
+                {% component 'blogPost' %}
+            </div>
+        </div>
+    </div>
+</section>

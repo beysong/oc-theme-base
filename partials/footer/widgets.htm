@@ -1,0 +1,60 @@
+description = "Footer Widgets"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+	$this['locale'] = App::getLocale();
+}
+?>
+==
+{% set CurrentLanguage = locale %}
+
+<div class="footer-area p_120">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 lg:col-span-4">
+                <div class="single-footer-widget tp_widgets">
+                    <img width="100" src="{{ 'assets/images/logo_w.png'|theme }}" alt="冷库视界">
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-4">
+                <div class="single-footer-widget tp_widgets">
+                    {% if CurrentLanguage == 'en' %}
+                    <h5 class="widget-title font-alt">About Us</h5>
+                    {% else %}
+                    <h5 class="widget-title font-alt">关于我们</h5>
+                    {% endif %}
+                    <ul class="list">
+                        <li><a href="http://www.nineear.com/" target="_blank">内容策划与定制</a></li>
+                        <li><a href="https://www.themeshow.cn">全渠道内容传播</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-4">
+                <div class="single-footer-widget tp_widgets">
+                    {% if CurrentLanguage == 'en' %}
+                    <h5 class="widget-title font-alt">Contact</h5>
+                    {% else %}
+                    <h5 class="widget-title font-alt">联系我们</h5>
+                    {% endif %}
+                    <ul class="list">
+                        <li>TEL: 021-1212122</li>
+                        <li>EMAIL: lengkushijie@163.com</li>
+                        <li>ADDRESS: 上海市长江南路299号</li>
+                        <li>邮编: 200000</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row footer-bottom d-flex justify-content-between align-items-center">
+            <div class="col-lg-12">
+                <p class="copyright font-alt">&copy; {{ this.page.date }} <a href="/">{{ this.theme.company_name }}</a>, All Rights Reserved.   {% if this.theme.beian is not empty %}
+                    <a href="http://www.beian.miit.gov.cn">{{ this.theme.beian }}</a>
+                    {% endif %}</p>
+            </div>
+           
+        </div>
+    </div>
+</div>

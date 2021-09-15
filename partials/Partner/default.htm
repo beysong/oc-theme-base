@@ -1,0 +1,10 @@
+
+<div class="container">
+    <div class="row">
+        {% for record in __SELF__.items%}
+        <div class="col-lg-4">
+            <img style="margin: 20px 10px;max-width: 100%;width: 240px;" src="{{ record.preview_image.getPath }}" alt="partner" />
+        </div>
+    {% endfor %}
+    </div>
+</div>

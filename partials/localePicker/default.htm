@@ -1,0 +1,17 @@
+[viewBag]
+==
+<?php
+function onStart()
+{
+	$this['locale'] = App::getLocale();
+}
+?>
+==
+{% set CurrentLanguage = locale %}
+{% if CurrentLanguage == 'en' %}
+<a class="dn_btn" href="#" data-request="onSwitchLocale" data-request-data="locale: 'cn'">中文</a>
+{% else %}
+<a class="dn_btn" href="#" data-request="onSwitchLocale" data-request-data="locale: 'en'">EN</a>
+{% endif %}
+
+{{locale}}

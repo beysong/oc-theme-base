@@ -1,0 +1,10 @@
+<div class="owl-carousel">
+    
+    {% for record in __SELF__.items if record.category_id == __SELF__.property('catid') %}
+        <div class="item">
+            <a href="{{record.url}}" target="_blank"><img src="{{ record.preview_image.getPath }}" alt="adv" /></a>
+        </div>
+    {% endfor %}
+   
+    
+</div>

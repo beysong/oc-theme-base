@@ -1,0 +1,66 @@
+title = "index"
+url = "/"
+layout = "main"
+description = "Index page"
+meta_title = "冷链"
+meta_description = "冷链"
+is_hidden = 0
+
+[viewBag]
+localeTitle[cn] = "首页"
+localeUrl[cn] = "/"
+localeDescription[cn] = "首页"
+
+[localePicker]
+forceUrl = 0
+
+[records homeAdv1]
+activeOnly = 1
+areaSlug = 0
+categorySlug = "{{ :category }}"
+tagSlug = "{{ :tag }}"
+recordPage = 0
+recordPageSlug = "{{ :record }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+
+[records Partner]
+activeOnly = 1
+areaSlug = 0
+categorySlug = "{{ :category }}"
+tagSlug = "{{ :tag }}"
+recordPage = 0
+recordPageSlug = "{{ :record }}"
+limit = 100
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+==
+<?php
+function onStart()
+{
+	$this['locale'] = App::getLocale();
+}
+?>
+==
+{% set CurrentLanguage = locale %}
+
+
+<section class="adv-slider">
+	<div class="container mx-auto">
+		<div class="grid grid-cols-12 gap-4">
+			<div class="col-span-12">
+				{% component 'homeAdv1' catid="2" %}
+			</div>
+		</div>
+	</div>
+</section>
+ 
+ 
+
+<h3 style="text-align: center;">合作客户</h3>
+<section>
+	{% component "Partner" %}
+</section>

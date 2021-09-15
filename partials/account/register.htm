@@ -1,0 +1,53 @@
+[viewBag]
+==
+{% if canRegister %}
+    <h3>注册</h3>
+    <form
+        data-request="onRegister">
+        <div class="form-group">
+            <label for="registerName">姓名</label>
+            <input
+                name="name"
+                type="text"
+                class="form-control"
+                id="registerName"
+                placeholder="请输入姓名" />
+        </div>
+
+        <div class="form-group">
+            <label for="registerEmail">Email</label>
+            <input
+                name="email"
+                type="email"
+                class="form-control"
+                id="registerEmail"
+                placeholder="请输入邮箱" />
+        </div>
+
+        {% if loginAttribute == "username" %}
+            <div class="form-group">
+                <label for="registerUsername">账号</label>
+                <input
+                    name="username"
+                    type="text"
+                    class="form-control"
+                    id="registerUsername"
+                    placeholder="请输入账号" />
+            </div>
+        {% endif %}
+
+        <div class="form-group">
+            <label for="registerPassword">密码</label>
+            <input
+                name="password"
+                type="password"
+                class="form-control"
+                id="registerPassword"
+                placeholder="请输入密码" />
+        </div>
+
+        <button type="submit" class="btn btn-default submit_btn">注册</button>
+    </form>
+{% else %}
+    <!-- Registration is disabled. -->
+{% endif %}

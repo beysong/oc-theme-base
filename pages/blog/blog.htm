@@ -1,0 +1,18 @@
+title = "Blog"
+url = "/blog/:slug/:page?"
+layout = "main"
+is_hidden = 0
+
+[viewBag]
+localeTitle[cn] = "新闻"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 30
+noPostsMessage = "还没有发布文章哦~"
+sortOrder = "published_at desc"
+categoryPage = "blog/blog"
+postPage = "blog/detail"
+==
+{% component 'blogPosts' %}

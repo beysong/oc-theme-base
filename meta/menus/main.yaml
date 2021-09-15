@@ -1,0 +1,28 @@
+items:
+    -
+        title: 首页
+        type: url
+        url: /
+        code: ''
+        viewBag:
+            locale:
+                cn:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 案例库
+        type: cms-page
+        code: ''
+        reference: case
+        viewBag:
+            locale:
+                cn:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: main

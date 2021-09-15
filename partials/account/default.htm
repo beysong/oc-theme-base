@@ -1,0 +1,61 @@
+[viewBag]
+==
+
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background="" style="transform: translateY(-32.6219px);"></div>
+        <div class="container">
+            <div class="banner_content text-center">
+                <h2>登录注册</h2>
+                <div class="page_link">
+                    <a href="/">首页</a>
+                    <a href="/account/login.htm">登录注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact_area p_120 contact_form">
+   <div class="container">
+    {% if not user %}
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <h3>登录</h3>
+                {% partial __SELF__ ~ '::signin' %}
+            </div>
+
+            <div class="col-md-6">
+                {% partial __SELF__ ~ '::register' %}
+            </div>
+
+        </div>
+
+    {% else %}
+        <div class="row">
+            <div class="col-lg-9">
+                
+            {% partial __SELF__ ~ '::activation_check' %}
+
+            {% partial __SELF__ ~ '::update' %}
+
+            {% partial __SELF__ ~ '::deactivate_link' %}
+            </div>
+            <div class="col-lg-3">
+                <div class="blog_info text-right">
+                    <div class="post_tag">
+                        菜单
+                    </div>
+                    <ul class="blog_meta list">
+                        <li><a href="/submit-showcase">我要发布<i class="lnr lnr-user"></i></a></li>
+                        <li><a href="#">货主需求<i class="lnr lnr-calendar-full"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+   </div>
+
+</section>

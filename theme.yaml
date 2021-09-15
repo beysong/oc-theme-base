@@ -1,0 +1,14 @@
+name: jcsasia
+description: "jcsasia."
+author: Beysong
+homepage: "https://www.themeshow.cn"
+code: jcsasia
+form: config/fields.yaml
+require:
+    - RainLab.Pages
+    - RainLab.Blog
+    - RainLab.User
+    - RainLab.Translate
+    - Martin.Forms
+
+translate: config/lang.yaml
