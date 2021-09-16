@@ -1,0 +1,42 @@
+/*------------- #rulles for top-bar in header --------------*/
+.main-header + .top-bar {
+  @apply hidden;
+}
+.main-header + .top-bar.is-visible {
+  @apply block;
+}
+.top-bar {
+  transition: all 0.3s ease;
+  transform: translate(-50%, -200%);
+  @apply fixed top-0 left-1/2 w-80 p-5 lg:w-full lg:block lg:static lg:transform-none border-b border-gray bg-white rounded-b-lg;
+  .top-bar-wrapper {
+    @apply flex justify-between relative;
+    .follow_us,
+    .socials {
+      @apply flex;
+      a {
+        @apply ml-3;
+      }
+    }
+    .top-bar-close {
+      @apply absolute text-xl right-0 top-0 lg:hidden;
+    }
+  }
+}
+.top-bar.is-visible {
+  transform: translate(-50%, 0%);
+  @apply z-10 w-80 fixed;
+  .top-bar-wrapper {
+    @apply flex-col;
+  }
+  .top-bar-close {
+    @apply block;
+  }
+}
+body.top-bar-visible:before {
+  content: "";
+  background: rgba(47, 44, 44, 0.85);
+  opacity: 0.8;
+  z-index: 1;
+  @apply fixed top-0 left-0 right-0 bottom-0;
+}

@@ -1,4 +1,5 @@
 import "./js/theme";
+import "./js/header";
 
 // (function () {
 //     const scripts = [theme];

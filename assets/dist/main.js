@@ -1,5 +1,23 @@
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./assets/src/js/header.js":
+/*!*********************************!*\
+  !*** ./assets/src/js/header.js ***!
+  \*********************************/
+/***/ (() => {
+
+eval("(function ($) {\n  var $header = $(\"#site-header\"),\n    $topbar = $header.siblings(\".top-bar\");\n\n  $(\".navigation-button-toggler\").on(\"click\", function () {\n    $(\".navigation\").toggleClass(\"is-visible\");\n    $(\".overlay-panel\").toggleClass(\"is-visible\");\n  });\n  $(\".navigation-close-button,.overlay-panel\").on(\"click\", function () {\n    $(\".navigation\").toggleClass(\"is-visible\");\n    $(\".overlay-panel\").toggleClass(\"is-invisible\");\n    if (timer) return;\n    var timer = setTimeout(() => {\n      timer = null;\n      $(\".overlay-panel\").toggleClass(\"is-visible is-invisible\");\n    }, 800);\n  });\n\n  $(\"#top-bar-js\").on(\"click\", function () {\n    $topbar.toggleClass(\"is-visible\");\n    $(\"body\").toggleClass(\"top-bar-visible\");\n  });\n  $(\".top-bar-close\").on(\"click\", function () {\n    $topbar.toggleClass(\"is-visible\");\n    $(\"body\").toggleClass(\"top-bar-visible\");\n  });\n\n  if ($header.hasClass(\"sticky-top\")) {\n    // Listen for resize events\n\n    window.addEventListener(\n      \"scroll\",\n      function (event) {\n        var timeout;\n        // If there's a timer, cancel it\n        if (timeout) {\n          window.cancelAnimationFrame(timeout);\n        }\n\n        // Setup the new requestAnimationFrame()\n        timeout = window.requestAnimationFrame(function () {\n          let scrollPosition = Math.round(window.scrollY);\n\n          let headerHeight = $header.outerHeight();\n          if (scrollPosition > headerHeight) {\n            $header.addClass(\"header--fixed\");\n          }\n          // If not, remove \"sticky\" class from header\n          else {\n            $header.removeClass(\"header--fixed\");\n          }\n        });\n      },\n      false\n    );\n\n    let scrollPosition = Math.round(window.scrollY);\n\n    let headerHeight = $header.outerHeight();\n    // If we've scrolled 60px, add \"sticky\" class to the header\n    if (scrollPosition > headerHeight) {\n      $header.addClass(\"header--fixed\");\n    }\n    // If not, remove \"sticky\" class from header\n    else {\n      $header.removeClass(\"header--fixed\");\n    }\n  }\n})(jQuery);\n\n\n//# sourceURL=webpack://themebase/./assets/src/js/header.js?");
+
+/***/ }),
 
 /***/ "./assets/src/js/theme.js":
 /*!********************************!*\
@@ -7,233 +25,7 @@
   \********************************/
 /***/ (() => {
 
-(function ($) {
-  "use strict";
-
-  var nav_offset_top = $("header").height() + 50;
-  /*-------------------------------------------------------------------------------
-  Navbar 
-  -------------------------------------------------------------------------------*/
-  //* Navbar Fixed
-
-  function navbarFixed() {
-    if ($(".header_area").length) {
-      $(window).on("scroll", function () {
-        var scroll = $(window).scrollTop();
-
-        if (scroll >= nav_offset_top) {
-          $(".header_area").addClass("navbar_fixed");
-        } else {
-          $(".header_area").removeClass("navbar_fixed");
-        }
-      });
-    }
-  }
-
-  navbarFixed();
-  /*----------------------------------------------------*/
-
-  /*  Parallax Effect js
-  /*----------------------------------------------------*/
-
-  function parallaxEffect() {
-    $(".bg-parallax").parallax();
-  }
-
-  parallaxEffect();
-  /*----------------------------------------------------*/
-
-  /*  MailChimp Slider
-  /*----------------------------------------------------*/
-
-  function mailChimp() {
-    $("#mc_embed_signup").find("form").ajaxChimp();
-  }
-
-  mailChimp();
-  $("select").niceSelect();
-  /*----------------------------------------------------*/
-
-  /*  Simple LightBox js
-  /*----------------------------------------------------*/
-
-  $(".imageGallery1 .light").simpleLightbox();
-  $(".counter").counterUp({
-    delay: 10,
-    time: 1000
-  });
-  /*----------------------------------------------------*/
-
-  /*  Testimonials Slider
-  /*----------------------------------------------------*/
-
-  function testimonials_slider() {
-    if ($(".testi_slider").length) {
-      $(".testi_slider").owlCarousel({
-        loop: true,
-        margin: 30,
-        items: 1,
-        nav: false,
-        autoplay: false,
-        smartSpeed: 1500,
-        dots: true,
-        //				navContainer: '.testimonials_area',
-        //                navText: ['<i class="lnr lnr-arrow-up"></i>','<i class="lnr lnr-arrow-down"></i>'],
-        responsiveClass: true
-      });
-    }
-  }
-
-  testimonials_slider();
-  $(function () {
-    $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
-      disableOn: 700,
-      type: "iframe",
-      mainClass: "mfp-fade",
-      removalDelay: 160,
-      preloader: false,
-      fixedContentPos: false
-    });
-    var time = 7; // time in seconds
-
-    var $progressBar, $bar, $elem, isPause, tick, percentTime;
-    $("#project-slider").find(".owl-carousel").owlCarousel({
-      autoplaySpeed: 500,
-      navSpeed: 500,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 2
-        },
-        1024: {
-          items: 3
-        },
-        1200: {
-          items: 4
-        }
-      },
-      margin: 10,
-      nav: true,
-      dots: false,
-      loop: true,
-      navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"] // onInitialized: progressBar,
-      // onTranslated: moved,
-      // onDrag: pauseOnDragging
-      //autoHeight : true,
-      // transitionStyle: "fadeUp"
-
-    }); //Init the carousel
-
-    $("#main-slider").find(".owl-carousel").owlCarousel({
-      autoplaySpeed: 500,
-      navSpeed: 500,
-      items: 1,
-      nav: true,
-      dots: true,
-      loop: true,
-      navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-      onInitialized: progressBar,
-      onTranslate: moved,
-      onDrag: pauseOnDragging,
-      // slideTransition: 'fadeIn',
-      animateOut: "fadeOut",
-      animateIn: "fadeIn" //autoHeight : true,
-      // animateOut: false,
-      // animateIn: false
-
-    });
-    $(window).on("resize", function () {
-      resize_owl();
-    });
-
-    function resize_owl() {
-      if ($elem) {
-        $($elem.target).trigger("resize.owl");
-      }
-    } //Init progressBar where elem is $("#owl-demo")
-
-
-    function progressBar(elem) {
-      $elem = elem; //build progress bar elements
-
-      buildProgressBar(); //start counting
-
-      start();
-    } //create div#progressBar and div#bar then append to $(".owl-carousel")
-
-
-    function buildProgressBar() {
-      $progressBar = $("<div>", {
-        id: "progressBar"
-      });
-      $bar = $("<div>", {
-        id: "bar"
-      });
-      $progressBar.append($bar).appendTo($elem.target);
-    }
-
-    function start() {
-      //reset timer
-      percentTime = 0;
-      isPause = false; //run interval every 0.01 second
-
-      tick = setInterval(interval, 10);
-    }
-
-    function interval() {
-      if (isPause === false) {
-        percentTime += 1 / time;
-        $bar.css({
-          width: percentTime + "%"
-        }); //if percentTime is equal or greater than 100
-
-        if (percentTime >= 100) {
-          // console.log(999)
-          //slide to next item
-          $($elem.target).trigger("next.owl");
-        }
-      }
-    } //pause while dragging
-
-
-    function pauseOnDragging() {
-      isPause = true;
-    } //moved callback
-
-
-    function moved() {
-      //clear interval
-      clearTimeout(tick); //start again
-
-      start();
-    } //Init the adv carousel
-
-
-    $(".adv-slider").find(".owl-carousel").owlCarousel({
-      autoplaySpeed: 500,
-      navSpeed: 500,
-      items: 1,
-      nav: false,
-      dots: true,
-      loop: true,
-      // onTranslate: moved,
-      // slideTransition: 'fadeIn',
-      animateOut: "fadeOut",
-      animateIn: "fadeIn",
-      autoHeight: true // animateOut: false,
-      // animateIn: false
-
-    });
-  });
-})(jQuery); // const main = (function ($) {
-//     const init = function () {
-//         console.log("???");
-//     };
-//     return { init };
-// })(jQuery);
-// export default main;
+eval("(function ($) {\n  \"use strict\";\n\n  var nav_offset_top = $(\"header\").height() + 50;\n  /*-------------------------------------------------------------------------------\n\t  Navbar \n\t-------------------------------------------------------------------------------*/\n\n  //* Navbar Fixed\n  function navbarFixed() {\n    if ($(\".header_area\").length) {\n      $(window).on(\"scroll\", function () {\n        var scroll = $(window).scrollTop();\n        if (scroll >= nav_offset_top) {\n          $(\".header_area\").addClass(\"navbar_fixed\");\n        } else {\n          $(\".header_area\").removeClass(\"navbar_fixed\");\n        }\n      });\n    }\n  }\n  navbarFixed();\n\n  /*----------------------------------------------------*/\n  /*  Parallax Effect js\n    /*----------------------------------------------------*/\n  function parallaxEffect() {\n    $(\".bg-parallax\").parallax();\n  }\n  parallaxEffect();\n\n  /*----------------------------------------------------*/\n  /*  MailChimp Slider\n    /*----------------------------------------------------*/\n  function mailChimp() {\n    $(\"#mc_embed_signup\").find(\"form\").ajaxChimp();\n  }\n  mailChimp();\n\n  $(\"select\").niceSelect();\n\n  /*----------------------------------------------------*/\n  /*  Simple LightBox js\n    /*----------------------------------------------------*/\n  $(\".imageGallery1 .light\").simpleLightbox();\n\n  $(\".counter\").counterUp({\n    delay: 10,\n    time: 1000,\n  });\n\n  /*----------------------------------------------------*/\n  /*  Testimonials Slider\n    /*----------------------------------------------------*/\n  function testimonials_slider() {\n    if ($(\".testi_slider\").length) {\n      $(\".testi_slider\").owlCarousel({\n        loop: true,\n        margin: 30,\n        items: 1,\n        nav: false,\n        autoplay: false,\n        smartSpeed: 1500,\n        dots: true,\n        //\t\t\t\tnavContainer: '.testimonials_area',\n        //                navText: ['<i class=\"lnr lnr-arrow-up\"></i>','<i class=\"lnr lnr-arrow-down\"></i>'],\n        responsiveClass: true,\n      });\n    }\n  }\n  testimonials_slider();\n\n  $(function () {\n    $(\".popup-youtube, .popup-vimeo, .popup-gmaps\").magnificPopup({\n      disableOn: 700,\n      type: \"iframe\",\n      mainClass: \"mfp-fade\",\n      removalDelay: 160,\n      preloader: false,\n\n      fixedContentPos: false,\n    });\n\n    var time = 7; // time in seconds\n\n    var $progressBar, $bar, $elem, isPause, tick, percentTime;\n\n    $(\"#project-slider\")\n      .find(\".owl-carousel\")\n      .owlCarousel({\n        autoplaySpeed: 500,\n        navSpeed: 500,\n        responsive: {\n          0: {\n            items: 1,\n          },\n          600: {\n            items: 2,\n          },\n          1024: {\n            items: 3,\n          },\n          1200: {\n            items: 4,\n          },\n        },\n        margin: 10,\n        nav: true,\n        dots: false,\n        loop: true,\n        navText: [\n          \"<i class='fa fa-angle-left'></i>\",\n          \"<i class='fa fa-angle-right'></i>\",\n        ],\n        // onInitialized: progressBar,\n        // onTranslated: moved,\n        // onDrag: pauseOnDragging\n        //autoHeight : true,\n        // transitionStyle: \"fadeUp\"\n      });\n\n    //Init the carousel\n    $(\"#main-slider\")\n      .find(\".owl-carousel\")\n      .owlCarousel({\n        autoplaySpeed: 500,\n        navSpeed: 500,\n        items: 1,\n        nav: true,\n        dots: true,\n        loop: true,\n        navText: [\n          \"<i class='fa fa-angle-left'></i>\",\n          \"<i class='fa fa-angle-right'></i>\",\n        ],\n        onInitialized: progressBar,\n        onTranslate: moved,\n        onDrag: pauseOnDragging,\n        // slideTransition: 'fadeIn',\n        animateOut: \"fadeOut\",\n        animateIn: \"fadeIn\",\n        //autoHeight : true,\n        // animateOut: false,\n        // animateIn: false\n      });\n\n    $(window).on(\"resize\", function () {\n      resize_owl();\n    });\n    function resize_owl() {\n      if ($elem) {\n        $($elem.target).trigger(\"resize.owl\");\n      }\n    }\n\n    //Init progressBar where elem is $(\"#owl-demo\")\n    function progressBar(elem) {\n      $elem = elem;\n      //build progress bar elements\n      buildProgressBar();\n      //start counting\n      start();\n    }\n\n    //create div#progressBar and div#bar then append to $(\".owl-carousel\")\n    function buildProgressBar() {\n      $progressBar = $(\"<div>\", {\n        id: \"progressBar\",\n      });\n      $bar = $(\"<div>\", {\n        id: \"bar\",\n      });\n      $progressBar.append($bar).appendTo($elem.target);\n    }\n\n    function start() {\n      //reset timer\n      percentTime = 0;\n      isPause = false;\n      //run interval every 0.01 second\n      tick = setInterval(interval, 10);\n    }\n\n    function interval() {\n      if (isPause === false) {\n        percentTime += 1 / time;\n        $bar.css({\n          width: percentTime + \"%\",\n        });\n        //if percentTime is equal or greater than 100\n        if (percentTime >= 100) {\n          // console.log(999)\n          //slide to next item\n          $($elem.target).trigger(\"next.owl\");\n        }\n      }\n    }\n\n    //pause while dragging\n    function pauseOnDragging() {\n      isPause = true;\n    }\n\n    //moved callback\n    function moved() {\n      //clear interval\n      clearTimeout(tick);\n      //start again\n      start();\n    }\n\n    //Init the adv carousel\n    $(\".adv-slider\").find(\".owl-carousel\").owlCarousel({\n      autoplaySpeed: 500,\n      navSpeed: 500,\n      items: 1,\n      nav: false,\n      dots: true,\n      loop: true,\n      // onTranslate: moved,\n      // slideTransition: 'fadeIn',\n      animateOut: \"fadeOut\",\n      animateIn: \"fadeIn\",\n      autoHeight: true,\n      // animateOut: false,\n      // animateIn: false\n    });\n  });\n})(jQuery);\n\n// const main = (function ($) {\n//     const init = function () {\n//         console.log(\"???\");\n//     };\n\n//     return { init };\n// })(jQuery);\n\n// export default main;\n\n\n//# sourceURL=webpack://themebase/./assets/src/js/theme.js?");
 
 /***/ }),
 
@@ -244,26 +36,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_theme__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/theme */ "./assets/src/js/theme.js");
-/* harmony import */ var _js_theme__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_theme__WEBPACK_IMPORTED_MODULE_0__);
- // (function () {
-//     const scripts = [theme];
-//     scripts.forEach((script) => script.init());
-// })();
-
-/***/ }),
-
-/***/ "./assets/src/style.css":
-/*!******************************!*\
-  !*** ./assets/src/style.css ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_theme__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/theme */ \"./assets/src/js/theme.js\");\n/* harmony import */ var _js_theme__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_theme__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/header */ \"./assets/src/js/header.js\");\n/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_header__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n// (function () {\n//     const scripts = [theme];\n//     scripts.forEach((script) => script.init());\n// })();\n\n\n//# sourceURL=webpack://themebase/./assets/src/main.js?");
 
 /***/ })
 
@@ -293,42 +66,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	(() => {
-/******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
-/******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
-/******/ 				return;
-/******/ 			}
-/******/ 			var notFulfilled = Infinity;
-/******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var [chunkIds, fn, priority] = deferred[i];
-/******/ 				var fulfilled = true;
-/******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
-/******/ 						chunkIds.splice(j--, 1);
-/******/ 					} else {
-/******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
-/******/ 					}
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferred.splice(i--, 1)
-/******/ 					var r = fn();
-/******/ 					if (r !== undefined) result = r;
-/******/ 				}
-/******/ 			}
-/******/ 			return result;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -369,68 +107,12 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		// no baseURI
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"/main": 0,
-/******/ 			"style": 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
-/******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime] = data;
-/******/ 			// add "moreModules" to the modules object,
-/******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
-/******/ 				for(moduleId in moreModules) {
-/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
-/******/ 					}
-/******/ 				}
-/******/ 				if(runtime) var result = runtime(__webpack_require__);
-/******/ 			}
-/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			for(;i < chunkIds.length; i++) {
-/******/ 				chunkId = chunkIds[i];
-/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					installedChunks[chunkId][0]();
-/******/ 				}
-/******/ 				installedChunks[chunkIds[i]] = 0;
-/******/ 			}
-/******/ 			return __webpack_require__.O(result);
-/******/ 		}
-/******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkjcsasia"] = self["webpackChunkjcsasia"] || [];
-/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
-/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
-/******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["style"], () => (__webpack_require__("./assets/src/main.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["style"], () => (__webpack_require__("./assets/src/style.css")))
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./assets/src/main.js");
 /******/ 	
 /******/ })()
 ;

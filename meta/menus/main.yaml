@@ -1,9 +1,13 @@
 items:
     -
         title: 首页
+        nesting: null
         type: url
         url: /
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 cn:
@@ -14,9 +18,13 @@ items:
             isExternal: '0'
     -
         title: 案例库
+        nesting: null
         type: cms-page
+        url: null
         code: ''
-        reference: case
+        reference: index
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 cn:
@@ -25,4 +33,35 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: service
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: service
+                cmsPage: null
+                replace: null
+                viewBag:
+                    locale:
+                        cn:
+                            title: 服务
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Login
+                type: cms-page
+                code: ''
+                reference: user/login
+                viewBag:
+                    locale:
+                        cn:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
 name: main

@@ -1,31 +1,31 @@
 # Theme options
 tabs:
-  fields:   
-    ### Appearance            
+  fields:
+    ### Appearance
     # Website Details
     appearance_settings_section:
-      tab: 网站设置
-      label: 网站详情
+      tab: Appearance
+      label: Website Details
       span: left
       type: section
-    
+
     # Header Settings
     appearance_header_section:
-      tab: 网站设置
-      label: 首屏设置
+      tab: Appearance
+      label: Header Settings
       span: right
-      type: section  
-    
+      type: section
+
     site_name:
-      tab: 网站设置
+      tab: Appearance
       span: left
-      label: 网站名称
-      type: text  
-    
+      label: Site name
+      type: text
+
     frontend_header_type:
-      tab: 网站设置
+      tab: Appearance
       span: right
-      label: 首屏展示类型
+      label: Select type of Header for Frontpage
       type: dropdown
       showSearch: false
       placeholder: -- select a header type --
@@ -33,11 +33,11 @@ tabs:
         image: Image
         slideshow: Slideshow
         video: Video
-        
+
     main_slider:
-      tab: 网站设置
+      tab: Appearance
       span: right
-      label: 图片轮播
+      label: Header Slideshow
       type: repeater
       cssClass: form_container
       form:
@@ -46,33 +46,17 @@ tabs:
             span: left
             label: Title
             type: text
-          title_en:
-            span: right
-            label: Title EN
-            type: text
           subtitle:
-            span: left
-            label: Sub-Title
-            type: text
-          subtitle_en:
             span: right
-            label: Sub-Title EN
+            label: Sub-Title
             type: text
           link:
             span: left
             label: Link URL
             type: text
-          link_en:
-            span: right
-            label: Link URL EN
-            type: text
           linktext:
-            span: left
-            label: Link Text
-            type: text
-          linktext_en:
             span: right
-            label: Link Text EN
+            label: Link Text
             type: text
           image:
             span: full
@@ -80,493 +64,329 @@ tabs:
             type: mediafinder
             mode: image
     main_image:
-      tab: 网站设置
+      tab: Appearance
       span: right
-      label: 首屏图片
+      label: Header Image
       type: mediafinder
       mode: image
       cssClass: form_container
     main_video:
-      tab: 网站设置
+      tab: Appearance
       span: right
-      label: 首屏视频
+      label: Header Video
       type: text
       cssClass: form_container
-    
-    
-      
-    # Block Features
+
+    ## Block Features
     block_features:
-      tab: 亮点
+      tab: Features
       span: full
-      label: 是否开启在首页展示
-      comment: 这个模块展示 icon, 标题 和 描述. 一般设置4个. icon可以从这个网址选择 http://icomoon.io/app.
+      label: Tick to activate the "Features" block on your frontpage
+      comment: This Block shows a set of Features with an icon, title and text. For the best appearance, you need to use exactly 4 Feature items. Choose icons from here www.rhythm.nikadevs.com/content/icons-et-line.
       type: switch
       on: On
       off: Off
-    
+
     # Features Form
     block_features_repeater:
-      tab: 亮点
+      tab: Features
       span: full
-      label: 亮点列表
+      label: Feature items
       type: repeater
       prompt: Add feature
       form:
         fields:
-            feature_icon:
-              tab: 亮点
-              span: left
-              label: Icon
-              type: text
-                
-            feature_title:
-              tab: 亮点
-              span: right
-              label: 标题
-              type: text  
-            feature_text:
-              tab: 亮点
-              span: full
-              label: 描述
-              type: richeditor
-    
-    
-      
-    ## Block About
-    block_about:
-      tab: 关于我们
-      span: full
-      label: 是否开启在首页展示
-      type: switch
-      on: On
-      off: Off
-    
-    # About us Form
-    about_title:
-      tab: 关于我们
-      span: left
-      label: 标题
-      type: text
-    about_image:
-      tab: 关于我们
-      span: right
-      label: Image
-      type: mediafinder
-      mode: image
-    about_subtitle:
-      tab: 关于我们
-      span: left
-      label: Sub-Title
-      type: text
-    about_description:
-      tab: 关于我们
-      span: left
-      label: 描述
-      type: richeditor
-    
-    
-      
-    ## Block Our work    
+          feature_icon:
+            tab: Features
+            span: left
+            label: Icon
+            type: text
+
+          feature_title:
+            tab: Features
+            span: right
+            label: Title
+            type: text
+          feature_text:
+            tab: Features
+            span: full
+            label: Description
+            type: richeditor
+
+    ## Block Our work
     # Our work Form
     block_work:
-      tab: 案例
+      tab: Our work
       span: left
-      label: 是否开启在首页展示
+      label: Tick to activate the "Our work" block on your frontpage
       type: switch
       on: On
       off: Off
-    
+
     block_work_repeater:
-      tab: 案例
+      tab: Our work
       span: right
-      label: 列表
+      label: Items
       type: repeater
-      prompt: 添加
+      prompt: Add work item
       form:
-        fields:                
-            work_title:
-              tab: 案例
-              span: left
-              label: 标题
-              type: text
-            work_image:
-              tab: 案例
-              span: right
-              label: 图片
-              type: mediafinder
-              mode: image  
-            work_subtitle:
-              tab: 案例
-              span: left
-              label: Sub-title
-              type: text  
-            work_link:
-              tab: 案例
-              span: left
-              label: 链接
-              type: text  
-            work_sortclass:
-              tab: 案例
-              span: full
-              label: Sortable class name
-              type: text
+        fields:
+          work_title:
+            tab: Our work
+            span: left
+            label: Title
+            type: text
+          work_image:
+            tab: Our work
+            span: right
+            label: Image
+            type: mediafinder
+            mode: image
+          work_subtitle:
+            tab: Our work
+            span: left
+            label: Sub-title
+            type: text
+          work_link:
+            tab: Our work
+            span: left
+            label: Link
+            type: text
+          work_sortclass:
+            tab: Our work
+            span: full
+            label: Sortable class name
+            type: text
     block_work_title:
-      tab: 案例
+      tab: Our work
       span: left
-      label: 标题
+      label: Title
       type: text
-    
-      
-    ## Block Callout    
-    # Callout Form
-    block_callout:
-      tab: Callout
-      span: left
-      label: 是否开启在首页展示
-      type: switch
-      on: On
-      off: Off
-      
-    callout_title:
-      tab: Callout
-      span: left
-      label: 标题
-      type: text
-    callout_linkname:
-      tab: Callout
-      span: right
-      label: Linkname
-      type: text  
-    callout_subtitle:
-      tab: Callout
-      span: left
-      label: Sub-Title
-      type: text
-    callout_linktarget:
-      tab: Callout
-      span: right
-      label: URL
-      type: text
-    
-    
-      
-    ## Block Team    
+
+    ## Block Team
     # Team Form
-    # block_team:
-    #   tab: 团队
-    #   span: left
-    #   label: 是否开启在首页展示
-    #   type: switch
-    #   on: On
-    #   off: Off
-    
-    # block_team_repeater:
-    #   tab: 团队
-    #   span: right
-    #   label: 列表
-    #   type: repeater
-    #   form:
-    #     fields:
-    #         team_personal_information:
-    #           tab: 团队
-    #           label: 个人信息
-    #           span: full
-    #           type: section                
-    #         team_name:
-    #           tab: 团队
-    #           span: left
-    #           label: Name
-    #           type: text
-    #         team_image:
-    #           tab: 团队
-    #           span: right
-    #           label: Image
-    #           type: mediafinder
-    #           mode: image  
-    #         team_position:
-    #           tab: 团队
-    #           span: left
-    #           label: Position
-    #           type: text  
-    #         team_title:
-    #           tab: 团队
-    #           span: left
-    #           label: Title
-    #           type: text  
-    #         team_description:
-    #           tab: 团队
-    #           span: left
-    #           label: Description
-    #           type: text
-    #         team_social_information:
-    #           tab: 团队
-    #           label: Social information
-    #           span: full
-    #           type: section                
-    #         team_facebook:
-    #           tab: 团队
-    #           span: left
-    #           label: Facebook
-    #           type: text                
-    #         team_twitter:
-    #           tab: 团队
-    #           span: right
-    #           label: Twitter
-    #           type: text            
-    #         team_linkedin:
-    #           tab: 团队
-    #           span: right
-    #           label: Linkedin
-    #           type: text      
-    # block_team_title:
-    #   tab: 团队
-    #   span: left
-    #   label: 标题
-    #   type: text
-    # block_team_subtitle:
-    #   tab: 团队
-    #   span: left
-    #   label: Sub-Title
-    #   type: text
-        
-
-    ## Block FAQ    
-    # FAQ Form
-    # block_faq:
-    #   tab: FAQ&Skills
-    #   span: left
-    #   label: 是否开启在首页展示
-    #   type: switch
-    #   on: On
-    #   off: Off
-    # block_skills:
-    #   tab: FAQ&Skills
-    #   span: right
-    #   label: 是否开启在首页展示
-    #   type: switch
-    #   on: On
-    #   off: Off
-      
-    # faq_section:
-    #   tab: FAQ&Skills
-    #   span: left
-    #   label: FAQ
-    #   type: section
-    # skills_section:
-    #   tab: FAQ&Skills
-    #   span: right
-    #   label: Skills
-    #   type: section
-        
-    # block_faq_title:
-    #   tab: FAQ&Skills
-    #   span: left
-    #   label: Title
-    #   type: text
-    # block_skills_title:
-    #   tab: FAQ&Skills
-    #   span: right
-    #   label: Title
-    #   type: text
-      
-    # block_faq_repeater:
-    #   tab: FAQ&Skills
-    #   span: left
-    #   label: FAQ
-    #   type: repeater
-    #   prompt: Add new FAQ
-    #   form:
-    #     fields:
-    #         faq_unique:
-    #           tab: FAQ&Skills
-    #           label: Unique name
-    #           span: left
-    #           type: text
-    #         faq_question:
-    #           tab: FAQ&Skills
-    #           label: Question
-    #           span: full
-    #           type: text
-    #         faq_answer:
-    #           tab: FAQ&Skills
-    #           label: Answer
-    #           span: full
-    #           type: richeditor  
-
-      
-    # block_skills_repeater:
-    #   tab: FAQ&Skills
-    #   span: right
-    #   label: Skills
-    #   type: repeater
-    #   prompt: Add new Skill
-    #   form:
-    #     fields:
-    #         skill_name:
-    #           tab: FAQ&Skills
-    #           label: Name
-    #           span: left
-    #           type: text
-    #         skill_icon:
-    #           tab: FAQ&Skills
-    #           label: ET-Line Icon
-    #           span: right
-    #           type: text
-    #         skill_min:
-    #           tab: FAQ&Skills
-    #           label: Min value
-    #           span: storm
-    #           type: text
-    #           cssClass: col-sm-4
-    #         skill_max:
-    #           tab: FAQ&Skills
-    #           label: Max value
-    #           span: storm
-    #           type: text
-    #           cssClass: col-sm-4
-    #         skill_value:
-    #           tab: FAQ&Skills
-    #           label: Value
-    #           span: storm
-    #           type: text
-    #           cssClass: col-sm-4   
-        
-    ## Block Testimonials    
-    # Testimonials Form
-    block_testimonials:
-      tab: 客户评价
+    block_team:
+      tab: Team
       span: left
-      label: 是否开启在首页展示
+      label: Tick to activate the "Team" block on your frontpage
       type: switch
       on: On
       off: Off
-    
-    block_testimonials_repeater:
-      tab: 客户评价
+
+    block_team_repeater:
+      tab: Team
       span: right
-      label: 客户评价
+      label: Items
       type: repeater
       form:
         fields:
-            testimonial_name:
-              tab: 客户评价
-              label: 姓名
-              span: left
-              type: text                
-            testimonial_company:
-              tab: 客户评价
-              span: right
-              label: 公司
-              type: text
-            testimonial_text:
-              tab: 客户评价
-              span: full
-              label: 评价内容
-              type: richeditor
-    block_testimonials_image:
-      tab: 客户评价
+          team_personal_information:
+            tab: Team
+            label: Personal information
+            span: full
+            type: section
+          team_name:
+            tab: Team
+            span: left
+            label: Name
+            type: text
+          team_image:
+            tab: Team
+            span: right
+            label: Image
+            type: mediafinder
+            mode: image
+          team_position:
+            tab: Team
+            span: left
+            label: Position
+            type: text
+          team_title:
+            tab: Team
+            span: left
+            label: Title
+            type: text
+          team_description:
+            tab: Team
+            span: left
+            label: Description
+            type: text
+          team_social_information:
+            tab: Team
+            label: Social information
+            span: full
+            type: section
+          team_facebook:
+            tab: Team
+            span: left
+            label: Facebook
+            type: text
+          team_twitter:
+            tab: Team
+            span: right
+            label: Twitter
+            type: text
+          team_instagram:
+            tab: Team
+            span: left
+            label: Instagram
+            type: text
+          team_linkedin:
+            tab: Team
+            span: right
+            label: Linkedin
+            type: text
+          team_pinterest:
+            tab: Team
+            span: left
+            label: Pinterest
+            type: text
+    block_team_title:
+      tab: Team
       span: left
-      label: 背景图
+      label: Title
+      type: text
+    block_team_subtitle:
+      tab: Team
+      span: left
+      label: Sub-Title
+      type: text
+
+    ## Block Testimonials
+    # Testimonials Form
+    block_testimonials:
+      tab: Testimonials
+      span: left
+      label: Tick to activate the "Testimonials" block on your frontpage
+      type: switch
+      on: On
+      off: Off
+
+    block_testimonials_repeater:
+      tab: Testimonials
+      span: right
+      label: Testimonials
+      type: repeater
+      form:
+        fields:
+          testimonial_name:
+            tab: Testimonials
+            label: Name
+            span: left
+            type: text
+          testimonial_company:
+            tab: Testimonials
+            span: right
+            label: Company
+            type: text
+          testimonial_text:
+            tab: Testimonials
+            span: full
+            label: Text
+            type: richeditor
+    block_testimonials_image:
+      tab: Testimonials
+      span: left
+      label: Background image
       type: mediafinder
       mode: image
-      
-    # Company details  
+
+    # Company details
     company_details_section:
-      tab: 公司详情
-      label: 公司详情
+      tab: Company details
+      label: Company details
       span: left
-      type: section  
+      type: section
     contact_details_section:
-      tab: 公司详情
-      label: 联系信息
+      tab: Company details
+      label: Contact information
       span: right
       type: section
-          
+
     company_title:
-      tab: 公司详情
+      tab: Company details
       span: left
-      label: 底部标题
+      label: Company Widget Title
       type: text
     contact_phone:
-      tab: 公司详情
+      tab: Company details
       span: right
-      label: 联系电话
+      label: Contact Phone
       type: text
-           
+
     company_slogan:
-      tab: 公司详情
+      tab: Company details
       span: left
-      label: 底部标语
+      label: Company Widget Slogan
       type: text
     contact_fax:
-      tab: 公司详情
+      tab: Company details
       span: right
-      label: 传真
+      label: Contact Fax
       type: text
-            
+
     company_name:
-      tab: 公司详情
+      tab: Company details
       span: left
-      label: 公司名称
+      label: Company Name
       type: text
     contact_address:
-      tab: 公司详情
+      tab: Company details
       span: right
-      label: 公司地址
+      label: Contact Address
       type: text
-        
+
     company_description:
-      tab: 公司详情
+      tab: Company details
       span: left
-      label: 公司描述
-      type: text      
-    contact_address2:
-      tab: 公司详情
-      span: right
-      label: 公司地址2
+      label: Company Description
       type: text
-      
-    contact_email:
-      tab: 公司详情
+    contact_address2:
+      tab: Company details
       span: right
-      label: 联系邮箱
-      type: text      
+      label: Contact Address 2
+      type: text
+
+    contact_email:
+      tab: Company details
+      span: right
+      label: Contact Email
+      type: text
     copyright:
-      tab: 公司详情
+      tab: Company details
       span: left
       label: Copyright
-      type: text  
-    beian:
-      tab: 公司详情
-      span: left
-      label: 备案信息
-      type: text  
+      type: text
 
     # Social links
-    social_weibo:
-      tab: 社交媒体
-      span: left
-      label: 微博链接
-      type: text
     social_facebook:
-      tab: 社交媒体
+      tab: Social
       span: left
-      label: Facebook链接
+      label: Facebook link
       type: text
     social_twitter:
-      tab: 社交媒体
+      tab: Social
       span: left
-      label: Twitter链接
+      label: Twitter link
+      type: text
+    social_instagram:
+      tab: Social
+      span: left
+      label: Instagram link
       type: text
     social_linkedin:
-      tab: 社交媒体
+      tab: Social
       span: left
-      label: Linkedin链接
+      label: Linkedin link
       type: text
-      
+    social_pinterest:
+      tab: Social
+      span: left
+      label: Pinterest link
+      type: text
+
     load_file:
-      tab: 社交媒体
+      tab: Social
       span: left
       type: partial
-      path: ~/themes/jcsasia/config/_load_file.htm
+      path: ~/themes/themebase/config/_load_file.htm

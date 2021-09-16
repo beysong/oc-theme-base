@@ -1,0 +1,63 @@
+<header class="main-header sticky-top" id="site-header">
+	{% partial "topbar.htm" %}
+	<div class="container mx-auto">
+		<div class="navigation-mobile">
+			<div class="navigation-logo">
+				<div class="logo">
+					<a href="/" class="full-block-link" rel="home"></a>
+					{% if this.theme.site_logo %}
+						<img loading="lazy" src="{{ this.theme.site_logo|media }}" alt="{{ this.theme.site_name }}">
+					{% else %}
+						<img loading="lazy" src="{{ 'assets/images/logo.png'|theme }}" alt="{{ this.theme.site_name }}">
+					{% endif %}
+					
+					<div class="logo-text">
+						<div class="logo-title">{{ this.theme.site_name }}</div>
+						<div class="logo-sub-title">{{ this.theme.site_desc }}</div>
+					</div>
+				</div>
+			</div>
+			<div id="top-bar-js" class="top-bar-link">
+				<i class="fa fa-gear"></i>
+			</div> 
+			<div class="navigation-button-toggler">
+				<i class="fa fa-flag"></i>
+			</div>
+		</div>
+
+		<div class="navigation">
+			<div class="navigation-header">
+				<div class="navigation-logo">
+					<div class="logo">
+						<a href="/" class="full-block-link" rel="home"></a>
+						{% if this.theme.site_logo %}
+							<img loading="lazy" src="{{ this.theme.site_logo|media }}" alt="{{ this.theme.site_name }}">
+						{% else %}
+							<img loading="lazy" src="{{ 'assets/images/logo.png'|theme }}" alt="{{ this.theme.site_name }}">
+						{% endif %}
+						
+						<div class="logo-text">
+							<div class="logo-title">{{ this.theme.site_name }}</div>
+							<div class="logo-sub-title">{{ this.theme.site_desc }}</div>
+						</div>
+					</div>
+				</div>
+				<span class="navigation-close-button">✕</span>
+			</div>
+			<div class="navigation-menu">
+				{% component 'staticMenu' %}
+			</div>
+			
+			<div class="user-menu open-overlay">
+				<a href="#" class="user-menu-content js-open-aside">
+				<span></span>
+				<span></span>
+				<span></span>
+				</a>
+			</div>
+		</div>
+
+	</div>
+	<div class="overlay-panel"></div>
+</header>
+{% partial "topbar.htm" %}

@@ -1,14 +1,14 @@
-name: jcsasia
-description: "jcsasia."
+name: ThemeBase
+description: "A theme with some base block."
 author: Beysong
 homepage: "https://www.themeshow.cn"
-code: jcsasia
+code: themebase
 form: config/fields.yaml
 require:
-    - RainLab.Pages
-    - RainLab.Blog
-    - RainLab.User
-    - RainLab.Translate
-    - Martin.Forms
+  - RainLab.Pages
+  - RainLab.Blog
+  - RainLab.User
+  - RainLab.Translate
+  - Martin.Forms
 
 translate: config/lang.yaml

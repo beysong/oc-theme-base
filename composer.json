@@ -1,7 +1,7 @@
 {
-    "name": "beysong/jcsasia-theme",
+    "name": "beysong/themebase-theme",
     "type": "october-theme",
-    "description": "october theme with tailwind",
+    "description": "october theme with some base block",
     "require": {
         "composer/installers": "~1.0",
         "rainlab/user-plugin": "~1.0",
