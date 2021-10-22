@@ -19,6 +19,16 @@ eval("(function ($) {\n  var $header = $(\"#site-header\"),\n    $topbar = $head
 
 /***/ }),
 
+/***/ "./assets/src/js/swiper.js":
+/*!*********************************!*\
+  !*** ./assets/src/js/swiper.js ***!
+  \*********************************/
+/***/ (() => {
+
+eval("(function ($) {\n  var swiper = new Swiper(\".swiper\");\n})(Swiper);\n\n\n//# sourceURL=webpack://themebase/./assets/src/js/swiper.js?");
+
+/***/ }),
+
 /***/ "./assets/src/js/theme.js":
 /*!********************************!*\
   !*** ./assets/src/js/theme.js ***!
@@ -36,7 +46,7 @@ eval("(function ($) {\n  \"use strict\";\n\n  var nav_offset_top = $(\"header\")
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_theme__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/theme */ \"./assets/src/js/theme.js\");\n/* harmony import */ var _js_theme__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_theme__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/header */ \"./assets/src/js/header.js\");\n/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_header__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n// (function () {\n//     const scripts = [theme];\n//     scripts.forEach((script) => script.init());\n// })();\n\n\n//# sourceURL=webpack://themebase/./assets/src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_theme__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/theme */ \"./assets/src/js/theme.js\");\n/* harmony import */ var _js_theme__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_theme__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/header */ \"./assets/src/js/header.js\");\n/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_header__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _js_swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/swiper */ \"./assets/src/js/swiper.js\");\n/* harmony import */ var _js_swiper__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_swiper__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\n// (function () {\n//     const scripts = [theme];\n//     scripts.forEach((script) => script.init());\n// })();\n\n\n//# sourceURL=webpack://themebase/./assets/src/main.js?");
 
 /***/ })
 
