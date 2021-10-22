@@ -8,7 +8,7 @@
 .top-bar {
   transition: all 0.3s ease;
   transform: translate(-50%, -200%);
-  @apply fixed top-0 left-1/2 w-80 p-5 lg:w-full lg:block lg:static lg:transform-none border-b border-gray bg-white rounded-b-lg;
+  @apply fixed top-0 left-1/2 w-80 p-5 lg:w-full lg:block lg:static lg:transform-none border-b border-gray-200 bg-white rounded-b-lg;
   .top-bar-wrapper {
     @apply flex justify-between relative;
     .follow_us,

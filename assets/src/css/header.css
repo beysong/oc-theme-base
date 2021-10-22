@@ -1,6 +1,7 @@
 .main-header {
   transition: all 0.3s ease;
   box-shadow: 9px 9px 9px 0 rgb(47 44 44 / 20%);
+  background-color: #fff;
   .logo img {
     height: 36px;
   }
@@ -48,7 +49,7 @@
   }
 }
 .main-header.header--fixed {
-  @apply sticky top-0;
+  @apply sticky top-0 z-10;
   .top-bar {
     @apply hidden;
   }
