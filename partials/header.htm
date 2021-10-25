@@ -4,17 +4,13 @@
 		<div class="navigation-mobile">
 			<div class="navigation-logo">
 				<div class="logo">
-					<a href="/" class="full-block-link" rel="home"></a>
+					<a href="/" class="full-block-link" rel="home">
 					{% if this.theme.site_logo %}
 						<img loading="lazy" src="{{ this.theme.site_logo|media }}" alt="{{ this.theme.site_name }}">
 					{% else %}
 						<img loading="lazy" src="{{ 'assets/images/logo.png'|theme }}" alt="{{ this.theme.site_name }}">
 					{% endif %}
-					
-					<div class="logo-text">
-						<div class="logo-title">{{ this.theme.site_name }}</div>
-						<div class="logo-sub-title">{{ this.theme.site_desc }}</div>
-					</div>
+					</a>
 				</div>
 			</div>
 			<div id="top-bar-js" class="top-bar-link">
@@ -29,17 +25,13 @@
 			<div class="navigation-header">
 				<div class="navigation-logo">
 					<div class="logo">
-						<a href="/" class="full-block-link" rel="home"></a>
+						<a href="/" class="full-block-link" rel="home">
 						{% if this.theme.site_logo %}
 							<img loading="lazy" src="{{ this.theme.site_logo|media }}" alt="{{ this.theme.site_name }}">
 						{% else %}
 							<img loading="lazy" src="{{ 'assets/images/logo.png'|theme }}" alt="{{ this.theme.site_name }}">
 						{% endif %}
-						
-						<div class="logo-text">
-							<div class="logo-title">{{ this.theme.site_name }}</div>
-							<div class="logo-sub-title">{{ this.theme.site_desc }}</div>
-						</div>
+						</a>
 					</div>
 				</div>
 				<span class="navigation-close-button">✕</span>
@@ -48,12 +40,15 @@
 				{% component 'staticMenu' %}
 			</div>
 			
-			<div class="user-menu open-overlay">
-				<a href="#" class="user-menu-content js-open-aside">
-				<span></span>
-				<span></span>
-				<span></span>
-				</a>
+			
+			<div class="login-block">
+				{% if user %}
+					<a class="dn_btn" href="/user/account">{{ user.name }}</a>,&nbsp;
+					<a class="dn_btn" href="" data-request="onLogout" data-request-data="redirect: '/'"><i class="fa fa-sign-out"></i></a>
+				{% else %}
+					<a class="js-window-popup" href="/user/login">Sign in</a>
+					<i class="iconfont icon-Rightarrow"></i>
+				{% endif %}
 			</div>
 		</div>
 

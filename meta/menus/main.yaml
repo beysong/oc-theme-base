@@ -17,14 +17,9 @@ items:
             cssClass: ''
             isExternal: '0'
     -
-        title: 案例库
-        nesting: null
-        type: cms-page
-        url: null
+        title: 新闻资讯
+        type: header
         code: ''
-        reference: index
-        cmsPage: null
-        replace: null
         viewBag:
             locale:
                 cn:
@@ -47,19 +42,6 @@ items:
                     locale:
                         cn:
                             title: 服务
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-            -
-                title: Login
-                type: cms-page
-                code: ''
-                reference: user/login
-                viewBag:
-                    locale:
-                        cn:
-                            title: ''
                             url: ''
                     isHidden: '0'
                     cssClass: ''

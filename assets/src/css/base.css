@@ -5,3 +5,8 @@ html {
 a:hover {
   color: var(--primary-color);
 }
+
+/* page wrapper */
+section.section {
+  @apply py-10;
+}

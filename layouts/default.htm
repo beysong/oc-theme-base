@@ -29,7 +29,7 @@ function onStart()
     <title>{{ this.theme.site_name }}</title>
     
     {% styles %}
-
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2888569_nmelt79qsp.css">
     <link href="{{ [
         'assets/iconfont/iconfont.css',
         'assets/dist/swiper.css',
@@ -41,43 +41,32 @@ function onStart()
         {% partial "header" %}
  
 
-     {% if this.page.id == 'index' %}
-        {% if this.theme.frontend_header_type == 'slideshow' %}
-            {% partial "header/slideshow" %}
-        {% endif %}
-        
-        {% if this.theme.frontend_header_type == 'image' %}
-            {% partial "header/image" %}
-        {% endif %}
-        
-        {% if this.theme.frontend_header_type == 'video' %}
-            {% partial "header/video" %}
-        {% endif %}
-    {% endif %}
 
-        {% page %}
+        <main>
+            {% page %}
+        </main>
        
                 
      <!-- Footer Widgets -->
      {% partial "footer/widgets" %}
       
-        
+     <!-- 'assets/js/popper.js',
+     'assets/js/bootstrap.min.js',
+     'assets/js/stellar.js',
+     'assets/vendors/lightbox/simpleLightbox.min.js',
+     'assets/vendors/nice-select/js/jquery.nice-select.min.js',
+     'assets/vendors/isotope/imagesloaded.pkgd.min.js',
+     'assets/vendors/isotope/isotope.pkgd.min.js',
+     'assets/vendors/owl-carousel/owl.carousel.min.js',
+     'assets/vendors/jquery-ui/jquery-ui.js',
+     'assets/js/jquery.ajaxchimp.min.js',
+     'assets/vendors/popup/jquery.magnific-popup.min.js',
+     'assets/js/mail-script.js',
+     'assets/vendors/counter-up/jquery.waypoints.min.js',
+     'assets/vendors/counter-up/jquery.counterup.js', -->
         <script src="{{ [
             'assets/js/jquery-3.5.1.js',
-            'assets/js/popper.js',
-            'assets/js/bootstrap.min.js',
-            'assets/js/stellar.js',
-            'assets/vendors/lightbox/simpleLightbox.min.js',
-            'assets/vendors/nice-select/js/jquery.nice-select.min.js',
-            'assets/vendors/isotope/imagesloaded.pkgd.min.js',
-            'assets/vendors/isotope/isotope.pkgd.min.js',
-            'assets/vendors/owl-carousel/owl.carousel.min.js',
-            'assets/vendors/jquery-ui/jquery-ui.js',
-            'assets/js/jquery.ajaxchimp.min.js',
-            'assets/vendors/popup/jquery.magnific-popup.min.js',
-            'assets/js/mail-script.js',
-            'assets/vendors/counter-up/jquery.waypoints.min.js',
-            'assets/vendors/counter-up/jquery.counterup.js',
+           
 
             'assets/dist/swiper.js',
             'assets/dist/main.js'

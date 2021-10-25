@@ -31959,6 +31959,13 @@ a:hover {
   color: var(--primary-color);
 }
 
+/* page wrapper */
+
+section.section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -34711,7 +34718,7 @@ a:hover {
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-  padding: 1.25rem
+  padding: 0.5rem
 }
 
 @media (min-width: 1024px) {
@@ -34727,6 +34734,8 @@ a:hover {
     position: relative;
     display: flex;
     justify-content: space-between;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
 .top-bar .top-bar-wrapper .follow_us, .top-bar .top-bar-wrapper .socials {
@@ -34787,7 +34796,8 @@ body.top-bar-visible:before {
 }
 
 .main-header .logo img {
-    height: 36px;
+    margin-left: 0.75rem;
+    height: 2rem;
   }
 
 .main-header .navigation-mobile {
@@ -34846,6 +34856,8 @@ body.top-bar-visible:before {
   }
 
 .main-header .navigation .navigation-header {
+      display: flex;
+      align-items: center;
       padding: 0.75rem
     }
 
@@ -34868,6 +34880,14 @@ body.top-bar-visible:before {
           display: none;
         }
       }
+
+.main-header .navigation .login-block {
+      display: flex;
+      align-items: center;
+      border-left-width: 1px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
 
 .main-header .navigation .open-overlay {
       position: absolute;
@@ -34939,7 +34959,13 @@ body.top-bar-visible:before {
 
 /* menu */
 
-.navigation-menu ul li, .navigation-menu ul a, .navigation-menu ul span {
+.navigation-menu {
+  margin-left: auto;
+  padding-right: 0.75rem;
+}
+
+.navigation-menu ul a, .navigation-menu ul span {
+      display: inline-block;
       padding: 0.75rem;
     }
 

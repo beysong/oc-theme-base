@@ -3,7 +3,7 @@
   box-shadow: 9px 9px 9px 0 rgb(47 44 44 / 20%);
   background-color: #fff;
   .logo img {
-    height: 36px;
+    @apply ml-3 h-8;
   }
   .navigation-mobile {
     @apply lg:hidden flex justify-between items-center w-full bg-white;
@@ -19,12 +19,14 @@
       right 0.8s cubic-bezier(0.1, 0.1, 0.1, 0.1);
     @apply -left-full fixed top-0 bottom-0 lg:static w-full sm:w-80 lg:w-full block lg:flex justify-between z-20 bg-white;
     .navigation-header {
-      @apply p-3 lg:p-0;
+      @apply p-3 lg:p-0 flex items-center;
       .navigation-close-button {
         @apply absolute right-3 top-2 text-2xl lg:hidden;
       }
     }
-
+    .login-block {
+      @apply border-l px-6 flex items-center;
+    }
     .open-overlay {
       @apply absolute;
     }
@@ -57,11 +59,11 @@
 
 /* menu */
 .navigation-menu {
+  @apply ml-auto pr-3;
   ul {
-    li,
     a,
     span {
-      @apply p-3;
+      @apply inline-block p-3;
     }
   }
   > ul {
