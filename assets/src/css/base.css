@@ -8,5 +8,5 @@ a:hover {
 
 /* page wrapper */
 section.section {
-  @apply py-10;
+  @apply py-10 mx-auto container;
 }

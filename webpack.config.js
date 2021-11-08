@@ -1,10 +1,10 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const BrowserSyncPlugin = require("browser-sync-webpack-plugin"); 
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 const devMode = process.env.NODE_ENV !== "production";
- 
+
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
@@ -24,8 +24,8 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/i,
         use: [
-          // devMode ? "style-loader" : MiniCssExtractPlugin.loader, 
-          MiniCssExtractPlugin.loader, 
+          // devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           "css-loader",
           {
             loader: "postcss-loader",

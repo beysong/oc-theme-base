@@ -18,8 +18,13 @@ items:
             isExternal: '0'
     -
         title: 新闻资讯
+        nesting: null
         type: header
+        url: null
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 cn:
@@ -46,4 +51,20 @@ items:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
+    -
+        title: 博客
+        nesting: 0
+        type: blog-category
+        code: ''
+        reference: '2'
+        cmsPage: blog/blog
+        replace: 0
+        viewBag:
+            locale:
+                cn:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
 name: main

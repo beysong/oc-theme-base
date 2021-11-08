@@ -31962,6 +31962,42 @@ a:hover {
 /* page wrapper */
 
 section.section {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  section.section {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  section.section {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.section {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  section.section {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  section.section {
+    max-width: 1536px;
+  }
+}
+
+section.section {
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }

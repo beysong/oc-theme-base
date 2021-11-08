@@ -12,16 +12,14 @@ slug = "{{ :slug }}"
 displayEmpty = 0
 categoryPage = "blog/blog"
 ==
-<section class="module-small">
-    <div class="container">
-        <div class="row">
-            <div  class="col-sm-4 col-md-3 blog_right_sidebar">
-                {% component 'blogCategories' %}
-                
-            </div>
-            <div class="col-sm-8 col-sm-offset-1">
-                {% component 'blogPost' %}
-            </div>
+<section class="section">
+    <div class="grid grid-cols-2">
+        <div  class="col-sm-4 col-md-3 blog_right_sidebar">
+            {% component 'blogCategories' %}
+            
+        </div>
+        <div class="col-sm-8 col-sm-offset-1">
+            {% component 'blogPost' %}
         </div>
     </div>
 </section>
