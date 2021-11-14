@@ -12,4 +12,9 @@ module.exports = {
       whitelistPatternsChildren: [/active$/],
     },
   },
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  daisyui: {
+    // styled: false,
+    themes: ["light", "emerald", "dark", "forest", "synthwave"],
+  },
 };

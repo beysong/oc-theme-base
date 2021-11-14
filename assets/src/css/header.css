@@ -1,7 +1,6 @@
 .main-header {
   transition: all 0.3s ease;
-  box-shadow: 9px 9px 9px 0 rgb(47 44 44 / 20%);
-  background-color: #fff;
+  @apply bg-white shadow-md text-neutral;
   .logo img {
     @apply ml-3 h-8;
   }
@@ -74,6 +73,10 @@
       span {
         @apply relative p-3;
       }
+      a:hover,
+      span:hover {
+        @apply text-primary;
+      }
 
       ul {
         box-shadow: 15px 15px 30px rgb(0 0 0 / 16%);
@@ -92,7 +95,7 @@
     li.active,
     .child-active {
       > a {
-        color: var(--primary-color);
+        @apply text-primary;
       }
     }
   }

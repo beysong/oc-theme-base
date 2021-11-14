@@ -4,58 +4,59 @@ description = "Section Team"
 ==
 {% if this.theme.block_team == '1' %}
 {% set fpTeam = this.theme.block_team_repeater %}
-<section class="module" id="team">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">{{ this.theme.block_team_title }}</h2>
-                <div class="module-subtitle font-serif">{{ this.theme.block_team_subtitle }}</div>
+
+<section class="pt-20 pb-48">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center text-center mb-24">
+            <div class="w-full lg:w-6/12 px-4">
+                <h2 class="text-4xl font-semibold">{{ this.theme.block_team_title }}</h2>
+                <p class="text-lg leading-relaxed m-4 text-gray-600">
+                    {{ this.theme.block_team_subtitle }}
+                </p>
             </div>
         </div>
-        <div class="row">
-        
+        <div class="flex flex-wrap">
             {% if fpTeam is not empty %}
             {% for team in fpTeam %}
-            <div class="mb-sm-20 wow fadeInUp col-md-4 col-sm-6 col-xs-12" onclick="wow fadeInUp">
-                <div class="team-item">
-                    <div class="team-image">
-                        <img src="{{ team.team_image|media }}" alt="Member Photo"/>
-                        <div class="team-detail">
-                            <h5 class="font-alt">{{ team.team_title }}</h5>
-                            <p class="font-serif">{{ team.team_description|raw }}</p>
-                            <div class="team-social">
-                            
-                                {% if this.theme.team_facebook is not empty %}
-                                <a href="{{ team.team_facebook }}"><i class="fa fa-facebook"></i></a>
-                                {% endif %}
-                                
-                                {% if this.theme.team_twitter is not empty %}
-                                <a href="{{ team.team_twitter }}"><i class="fa fa-twitter"></i></a>
-                                {% endif %}
-                                
-                                {% if this.theme.team_instagram is not empty %}
-                                <a href="{{ team.team_instagram }}"><i class="fa fa-instagram"></i></a>
-                                {% endif %}
-                                
-                                {% if this.theme.team_linkedin is not empty %}
-                                <a href="{{ team.team_instagram }}"><i class="fa fa-linkedin"></i></a>
-                                {% endif %}
-                                
-                                {% if this.theme.team_pinterest is not empty %}
-                                <a href="{{ team.team_pinterest }}"><i class="fa fa-pinterest"></i></a>
-                                {% endif %}
-                            </div>
+            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+                <div class="px-6">
+                    <img alt="..." src="{{ team.team_image|media }}" class="shadow-lg rounded-full max-w-full mx-auto"
+                        style="max-width: 120px;" />
+                    <div class="pt-6 text-center">
+                        <h5 class="text-xl font-bold">{{ team.team_name }}</h5>
+                        <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                            {{ team.team_title }}
+                        </p>
+                        <p>{{ team.team_position }}</p>
+                        <p>{{ team.team_description|raw }}</p>
+                        <div class="mt-6">
+                            {% if this.theme.team_facebook is not empty %}
+                            <a href="{{ team.team_facebook }}"><i class="fa fa-facebook"></i></a>
+                            {% endif %}
+
+                            {% if this.theme.team_twitter is not empty %}
+                            <a href="{{ team.team_twitter }}"><i class="fa fa-twitter"></i></a>
+                            {% endif %}
+
+                            {% if this.theme.team_instagram is not empty %}
+                            <a href="{{ team.team_instagram }}"><i class="fa fa-instagram"></i></a>
+                            {% endif %}
+
+                            {% if this.theme.team_linkedin is not empty %}
+                            <a href="{{ team.team_instagram }}"><i class="fa fa-linkedin"></i></a>
+                            {% endif %}
+
+                            {% if this.theme.team_pinterest is not empty %}
+                            <a href="{{ team.team_pinterest }}"><i class="fa fa-pinterest"></i></a>
+                            {% endif %}
                         </div>
-                    </div>
-                    <div class="team-descr font-alt">
-                        <div class="team-name">{{ team.team_name }}</div>
-                        <div class="team-role">{{ team.team_position }}</div>
                     </div>
                 </div>
             </div>
             {% endfor %}
             {% endif %}
-            
+
+
         </div>
     </div>
 </section>

@@ -55,10 +55,24 @@ items:
         title: 博客
         nesting: 0
         type: blog-category
+        url: null
         code: ''
         reference: '2'
         cmsPage: blog/blog
         replace: 0
+        viewBag:
+            locale:
+                cn:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Elements
+        type: cms-page
+        code: ''
+        reference: elements
         viewBag:
             locale:
                 cn:
