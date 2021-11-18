@@ -19,38 +19,40 @@ function onStart()
 {% set CurrentLanguage = locale %}
 {% spaceless %}
 <!doctype html>
-<html lang="en">
-    <head>
+<html lang="en" data-theme="light">
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{{ 'assets/images/favicon.ico'|theme }}" type="image/x-icon">
-                
+
     <title>{{ this.theme.site_name }}</title>
-    
+
     {% styles %}
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_2888569_nmelt79qsp.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2888569_v4yp9jlwc5h.css">
     <link href="{{ [
         'assets/iconfont/iconfont.css',
         'assets/dist/swiper.css',
         'assets/dist/style.css',
-    ]|theme }}" rel="stylesheet"> 
+    ]|theme }}" rel="stylesheet">
     {% placeholder head %}
-    </head>
-    <body class="min-h-screen">
-        {% partial "header" %}
- 
+</head>
+
+<body class="min-h-screen">
+    {% partial "header" %}
 
 
-        <main>
-            {% page %}
-        </main>
-       
-                
-     <!-- Footer Widgets -->
-     {% partial "footer/widgets" %}
-      
-     <!-- 'assets/js/popper.js',
+
+    <main>
+        {% page %}
+    </main>
+
+
+    <!-- Footer Widgets -->
+    {% partial "footer/widgets" %}
+
+    <!-- 'assets/js/popper.js',
      'assets/js/bootstrap.min.js',
      'assets/js/stellar.js',
      'assets/vendors/lightbox/simpleLightbox.min.js',
@@ -64,16 +66,17 @@ function onStart()
      'assets/js/mail-script.js',
      'assets/vendors/counter-up/jquery.waypoints.min.js',
      'assets/vendors/counter-up/jquery.counterup.js', -->
-        <script src="{{ [
+    <script src="{{ [
             'assets/js/jquery-3.5.1.js',
            
 
             'assets/dist/swiper.js',
             'assets/dist/main.js'
-            ]|theme }}"></script>        
-        {% framework extras %}
-        {% scripts %} 
+            ]|theme }}"></script>
+    {% framework extras %}
+    {% scripts %}
 
-    </body>
+</body>
+
 </html>
 {% endspaceless %}
