@@ -5,7 +5,7 @@ description = "Section Team"
 {% if this.theme.block_team == '1' %}
 {% set fpTeam = this.theme.block_team_repeater %}
 
-<section class="module pt-20 pb-48">
+<section class="module {{ className|default('py-36')}}">
     <div class="container mx-auto px-4">
         <div class="flex flex-wrap justify-center text-center mb-24">
             <div class="w-full lg:w-6/12 px-4">

@@ -1,0 +1,32 @@
+.module {
+  @apply bg-no-repeat;
+  .module-title {
+    @apply flex flex-wrap justify-center text-center mb-16;
+    .main-title {
+      @apply text-4xl;
+    }
+    .sub-title {
+      @apply text-lg leading-relaxed my-4 text-gray-600;
+    }
+  }
+}
+
+.features-item {
+  @apply text-center my-5;
+  .features-icon {
+    @apply text-2xl;
+  }
+  .features-title {
+    @apply text-lg mt-5;
+  }
+}
+
+.alt-features-item {
+  @apply relative pl-24 text-sm;
+  .alt-features-icon {
+    @apply absolute left-0 w-16 h-16 text-2xl;
+  }
+  .alt-features-title {
+    @apply text-lg;
+  }
+}

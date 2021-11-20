@@ -113,6 +113,38 @@ tabs:
             label: Description
             type: richeditor
 
+    ## Block About
+    block_about:
+      tab: About us
+      span: full
+      label: Tick to activate the "About us" block on your frontpage
+      type: switch
+      on: On
+      off: Off
+
+    # About us Form
+    about_title:
+      tab: About us
+      span: left
+      label: Title
+      type: text
+    about_image:
+      tab: About us
+      span: right
+      label: Image
+      type: mediafinder
+      mode: image
+    about_subtitle:
+      tab: About us
+      span: left
+      label: Sub-Title
+      type: text
+    about_description:
+      tab: About us
+      span: left
+      label: Description
+      type: richeditor
+
     ## Block Our work
     # Our work Form
     block_work:

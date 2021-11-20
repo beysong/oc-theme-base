@@ -2,8 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import "./css/global";
 @import "./css/topbar";
-
 /*----------------------------------------------------*/
 @import "./css/header";
 /*---------------------------------------------------- */

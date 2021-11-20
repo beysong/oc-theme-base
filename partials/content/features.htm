@@ -4,12 +4,12 @@ description = "Section Features"
 ==
 {% if this.theme.block_features == '1' %}
 {% set fpFeatures = this.theme.block_features_repeater %}
-<section class="module pt-20" id="services">
+<section class="module {{ className|default('py-36') }}" id="services">
     <div class="container mx-auto">
-        <div class="flex flex-wrap justify-center text-center mb-24">
+        <div class="module-title">
             <div class="w-full lg:w-6/12 px-4">
-                <h2 class="text-4xl font-semibold">服务</h2>
-                <p class="text-lg leading-relaxed m-4 text-gray-600">
+                <h2 class="main-title">服务</h2>
+                <p class="sub-title">
                     服务服务服务服务服务服务
                 </p>
             </div>
@@ -17,18 +17,14 @@ description = "Section Features"
         <div class="flex flex-wrap">
             {% if fpFeatures is not empty %}
             {% for feature in fpFeatures %}
-
             <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
                 <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                    <div class="px-4 py-5 flex-auto">
-                        <div
-                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                            <i class="iconfont icon-lightbulb"></i>
+                    <div class="features-item">
+                        <div class="inline-block w-12 h-12 features-icon">
+                            <i class="iconfont icon-lightbulb text-4xl"></i>
                         </div>
-                        <h6 class="text-xl font-semibold">{{ feature.feature_title }}</h6>
-                        <p class="mt-2 mb-4 text-gray-600">
-                            {{ feature.feature_text|raw }}
-                        </p>
+                        <h6 class="features-title">{{ feature.feature_title }}</h6>
+                        {{ feature.feature_text|raw }}
                     </div>
                 </div>
             </div>
