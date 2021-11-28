@@ -10,6 +10,12 @@
     }
   }
 }
+.page {
+  @apply min-h-screen;
+  .page-title {
+    @apply text-center py-12 bg-gray-900 opacity-60 text-white text-xl uppercase;
+  }
+}
 
 .features-item {
   @apply text-center my-5;

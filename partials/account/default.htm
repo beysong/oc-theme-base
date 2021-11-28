@@ -1,36 +1,29 @@
 [viewBag]
 ==
 
-<section class="contact_area p_120 contact_form">
-   <div class="container">
-    {% if not user %}
+<section class="module {{ className|default('py-36') }}">
+    <div class="container mx-auto">
+        {% if not user %}
 
-        <div class="grid grid-cols-2">
-
-            <div>
-                {% partial __SELF__ ~ '::signin' %}
+        <div class="flex items-end flex-col lg:flex-row xl:flex-row 2xl:flex-row">
+            {% partial __SELF__ ~ '::signin' %}
+            <div
+                class="divider text-gray-200 before:bg-gray-200 after:bg-gray-200 lg:divider-vertical xl:divider-vertical 2xl:divider-vertical">
             </div>
-
-            <div>
-                {% partial __SELF__ ~ '::register' %}
-            </div>
-
+            {% partial __SELF__ ~ '::register' %}
         </div>
 
-    {% else %}
-        <div class="row">
-            <div class="col-lg-9">
-                
+        {% else %}
+        <div class="w-full">
+
             {% partial __SELF__ ~ '::activation_check' %}
 
             {% partial __SELF__ ~ '::update' %}
 
             {% partial __SELF__ ~ '::deactivate_link' %}
-            </div>
-          
         </div>
 
-    {% endif %}
-   </div>
+        {% endif %}
+    </div>
 
 </section>

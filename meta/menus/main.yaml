@@ -17,41 +17,6 @@ items:
             cssClass: ''
             isExternal: '0'
     -
-        title: 新闻资讯
-        nesting: null
-        type: header
-        url: null
-        code: ''
-        reference: null
-        cmsPage: null
-        replace: null
-        viewBag:
-            locale:
-                cn:
-                    title: ''
-                    url: ''
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-        items:
-            -
-                title: service
-                nesting: null
-                type: cms-page
-                url: null
-                code: ''
-                reference: service
-                cmsPage: null
-                replace: null
-                viewBag:
-                    locale:
-                        cn:
-                            title: 服务
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-    -
         title: 博客
         nesting: 0
         type: blog-category
@@ -70,9 +35,13 @@ items:
             isExternal: '0'
     -
         title: Elements
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: elements
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 cn:

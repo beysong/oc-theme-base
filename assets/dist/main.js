@@ -25,7 +25,7 @@ eval("(function ($) {\n  var $header = $(\"#site-header\"),\n    $topbar = $head
   \*********************************/
 /***/ (() => {
 
-eval("(function ($) {\n  var swiper = new Swiper(\".swiper\", { loop: true });\n})(Swiper);\n\n\n//# sourceURL=webpack://themebase/./assets/src/js/swiper.js?");
+eval("(function ($) {\n  var swiper = new Swiper(\".swiper\", {\n    loop: true,\n    autoplay: {\n      delay: 5500,\n      disableOnInteraction: false,\n    },\n  });\n})(Swiper);\n\n\n//# sourceURL=webpack://themebase/./assets/src/js/swiper.js?");
 
 /***/ }),
 

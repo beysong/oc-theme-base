@@ -4,31 +4,27 @@ description = "Section Testimonials"
 ==
 {% if this.theme.block_testimonials == '1' %}
 {% set fpTestimonial = this.theme.block_testimonials_repeater %}
-<section class="module bg-dark-60 pt-0 pb-0 parallax-bg testimonial" data-background="{{ this.theme.block_testimonials_image|media }}">
-    <div class="testimonials-slider pt-140 pb-140">
-        <ul class="slides">
-        
+<section class="module bg-fixed {{ className|default('py-36') }} bg-gray-900 text-white parallax-bg testimonial"
+    style="background-image: url({{this.theme.block_testimonials_image|media }});background-position: center center;">
+    <div class="swiper">
+        <ul class="swiper-wrapper">
+
             {% if fpTestimonial is not empty %}
             {% for testimonial in fpTestimonial %}
-            <li>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="module-icon"><span class="icon-quote"></span></div>
-                        </div>
+            <li class="swiper-slide">
+                <div class="container mx-auto">
+                    <div class="w-full text-center">
+                        <div class="module-icon"><span class="icon-quote"></span></div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2">
-                            <blockquote class="testimonial-text font-alt">{{ testimonial.testimonial_text|raw }}</blockquote>
-                        </div>
+                    <div class="w-2/3 mx-auto text-center text-lg uppercase tracking-widest leading-8 font-extralight">
+                        <blockquote class="testimonial-text font-alt">{{ testimonial.testimonial_text|raw }}
+                        </blockquote>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-4 col-sm-offset-4">
-                            <div class="testimonial-author">
-                                <div class="testimonial-caption font-alt">
-                                    <div class="testimonial-title">{{ testimonial.testimonial_name }}</div>
-                                    <div class="testimonial-descr">{{ testimonial.testimonial_company }}</div>
-                                </div>
+                    <div class="w-1/3 mx-auto mt-12">
+                        <div class="text-center">
+                            <div class="tracking-widest font-alt">
+                                <div class="testimonial-title">{{ testimonial.testimonial_name }}</div>
+                                <div class="text-gray-400 text-sm">{{ testimonial.testimonial_company }}</div>
                             </div>
                         </div>
                     </div>
@@ -36,7 +32,7 @@ description = "Section Testimonials"
             </li>
             {% endfor %}
             {% endif %}
-            
+
         </ul>
     </div>
 </section>

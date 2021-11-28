@@ -47,11 +47,14 @@ function onStart()
 ==
 {% set CurrentLanguage = locale %}
 
-{% partial 'content/sliders' %}
-{% partial 'content/features' %}
-{% partial 'content/about' className="py-0" %}
+<div class="page">
 
+	{% partial 'content/sliders' %}
+	{% partial 'content/features' %}
+	{% partial 'content/about' className="py-0" %}
 
+	{% partial 'content/testimonials' %}
 
-{% partial 'content/team' %}
-{% partial 'content/tryout' %}
+	{% partial 'content/team' %}
+	{% partial 'content/tryout' %}
+</div>

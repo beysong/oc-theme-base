@@ -9,12 +9,15 @@ localeTitle[cn] = "新闻"
 [blogPosts]
 pageNumber = "{{ :page }}"
 categoryFilter = "{{ :slug }}"
-postsPerPage = 30
+postsPerPage = 10
 noPostsMessage = "还没有发布文章哦~"
 sortOrder = "published_at desc"
 categoryPage = "blog/blog"
 postPage = "blog/detail"
 ==
-<section class="section">
-{% component 'blogPosts' %}
+<section class="page">
+    <div class="page-title">博客</div>
+    <div class="container mx-auto">
+        {% component 'blogPosts' %}
+    </div>
 </section>
