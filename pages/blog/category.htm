@@ -1,16 +1,12 @@
-title = "Blog"
-url = "/blog/:slug/:page?"
+title = "Blog Category"
+url = "/blog/category/:slug/:page?"
 layout = "default"
 is_hidden = 0
 
-[viewBag]
-localeTitle[cn] = "新闻"
-
 [blogPosts]
 pageNumber = "{{ :page }}"
-categoryFilter = "{{ :slug }}"
 postsPerPage = 10
-noPostsMessage = "还没有发布文章哦~"
+noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "blog/category"
 postPage = "blog/post"
@@ -20,12 +16,12 @@ slug = "{{ :slug }}"
 displayEmpty = 0
 categoryPage = "blog/category"
 ==
-<section class="page">
-    <div class="page-title">博客</div>
-    <div class="container mx-auto">
+<section class="page module">
+    <div>
         {% component 'blogPosts' %}
     </div>
     <div>
-    {% component 'blogCategories' %}
+     {% component 'blogCategories' %}
     </div>
+   
 </section>
