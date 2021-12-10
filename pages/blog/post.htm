@@ -6,7 +6,15 @@ is_hidden = 0
 [blogPost]
 slug = "{{ :slug }}"
 categoryPage = "blog/category"
+
+[forumEmbedTopic]
+embedCode = ":slug"
+channelSlug = "blog-comments"
+memberPage = 404
 ==
 <section class="page module">
     <div>{% component 'blogPost' %}</div>
+    <div class="container mx-auto">
+        {% component 'forumEmbedTopic' %}
+    </div>
 </section>

@@ -20,7 +20,7 @@ items:
         title: 博客
         type: cms-page
         code: ''
-        reference: blog/blog
+        reference: blog
         viewBag:
             locale:
                 cn:
@@ -36,6 +36,23 @@ items:
         url: null
         code: ''
         reference: elements
+        cmsPage: null
+        replace: null
+        viewBag:
+            locale:
+                cn:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Forum
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: forum
         cmsPage: null
         replace: null
         viewBag:
