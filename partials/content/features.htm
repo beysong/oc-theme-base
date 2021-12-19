@@ -21,7 +21,7 @@ description = "Section Features"
                 <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div class="features-item">
                         <div class="inline-block w-12 h-12 features-icon">
-                            <i class="iconfont icon-lightbulb text-4xl"></i>
+                            <i class="iconfont text-4xl {{ feature.feature_icon }}"></i>
                         </div>
                         <h6 class="features-title">{{ feature.feature_title }}</h6>
                         {{ feature.feature_text|raw }}

@@ -258,20 +258,10 @@ tabs:
             span: right
             label: Twitter
             type: text
-          team_instagram:
-            tab: Team
-            span: left
-            label: Instagram
-            type: text
           team_linkedin:
             tab: Team
             span: right
             label: Linkedin
-            type: text
-          team_pinterest:
-            tab: Team
-            span: left
-            label: Pinterest
             type: text
     block_team_title:
       tab: Team
@@ -401,20 +391,10 @@ tabs:
       span: left
       label: Twitter link
       type: text
-    social_instagram:
-      tab: Social
-      span: left
-      label: Instagram link
-      type: text
     social_linkedin:
       tab: Social
       span: left
       label: Linkedin link
-      type: text
-    social_pinterest:
-      tab: Social
-      span: left
-      label: Pinterest link
       type: text
 
     load_file:

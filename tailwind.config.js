@@ -1,18 +1,5 @@
 module.exports = {
-  mode: "jit",
-  purge: {
-    content: ["layouts/**/*.htm", "pages/**/*.htm", "partials/**/*.htm"],
-    options: {
-      whitelistPatterns: [
-        /active$/,
-        /error$/,
-        /sal-animate$/,
-        /disable-scroll$/,
-        /^glider/,
-      ],
-      whitelistPatternsChildren: [/active$/],
-    },
-  },
+  content: ["layouts/**/*.htm", "pages/**/*.htm", "partials/**/*.htm"],
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     // styled: false,
