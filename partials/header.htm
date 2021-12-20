@@ -5,17 +5,17 @@
 			<div class="navigation-logo">
 				<div class="logo">
 					<a href="/" class="full-block-link" rel="home">
-					{% if this.theme.site_logo %}
+						{% if this.theme.site_logo %}
 						<img loading="lazy" src="{{ this.theme.site_logo|media }}" alt="{{ this.theme.site_name }}">
-					{% else %}
+						{% else %}
 						<img loading="lazy" src="{{ 'assets/images/logo.png'|theme }}" alt="{{ this.theme.site_name }}">
-					{% endif %}
+						{% endif %}
 					</a>
 				</div>
 			</div>
 			<div id="top-bar-js" class="top-bar-link">
 				<i class="fa fa-gear"></i>
-			</div> 
+			</div>
 			<div class="navigation-button-toggler">
 				<i class="fa fa-flag"></i>
 			</div>
@@ -26,11 +26,12 @@
 				<div class="navigation-logo">
 					<div class="logo">
 						<a href="/" class="full-block-link" rel="home">
-						{% if this.theme.site_logo %}
+							{% if this.theme.site_logo %}
 							<img loading="lazy" src="{{ this.theme.site_logo|media }}" alt="{{ this.theme.site_name }}">
-						{% else %}
-							<img loading="lazy" src="{{ 'assets/images/logo.png'|theme }}" alt="{{ this.theme.site_name }}">
-						{% endif %}
+							{% else %}
+							<img loading="lazy" src="{{ 'assets/images/logo.png'|theme }}"
+								alt="{{ this.theme.site_name }}">
+							{% endif %}
 						</a>
 					</div>
 				</div>
@@ -39,15 +40,16 @@
 			<div class="navigation-menu">
 				{% component 'staticMenu' %}
 			</div>
-			
-			
+
+
 			<div class="login-block">
 				{% if user %}
-					<a class="dn_btn" href="/user/account">{{ user.name }}</a>,&nbsp;
-					<a class="dn_btn" href="" data-request="onLogout" data-request-data="redirect: '/'"><i class="fa fa-sign-out"></i></a>
+				<a class="dn_btn" href="/user/account">{{ user.name }}</a>,&nbsp;
+				<a class="dn_btn" href="" data-request="onLogout" data-request-data="redirect: '/'"><i
+						class="iconfont icon-sign-out"></i></a>
 				{% else %}
-					<a class="js-window-popup" href="/user/login">Sign in</a>
-					<i class="iconfont icon-Rightarrow"></i>
+				<a class="js-window-popup" href="/user/account">Sign in</a>
+				<i class="iconfont icon-Rightarrow"></i>
 				{% endif %}
 			</div>
 		</div>

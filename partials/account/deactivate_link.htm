@@ -1,6 +1,8 @@
-<a href="javascript:;" onclick="$('#accountDeactivateForm').toggle()">
-    注销账户
-</a>
+<div class="mt-2">
+    <a href="javascript:;" onclick="$('#accountDeactivateForm').toggle()">
+        注销账户
+    </a>
+</div>
 
 <div id="accountDeactivateForm" style="display: none">
     {{ form_ajax('onDeactivate') }}
