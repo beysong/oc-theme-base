@@ -1,26 +1,28 @@
 <div class="mt-2">
-    <a href="javascript:;" onclick="$('#accountDeactivateForm').toggle()">
+    <a href="#accountDeactivateForm">
         注销账户
     </a>
 </div>
 
-<div id="accountDeactivateForm" style="display: none">
-    {{ form_ajax('onDeactivate') }}
-    <hr />
-    <h3>确认注销账户?</h3>
-    <p>
-        您的账户信息将会从本站删除。
-        您可以随时再次注册本站。
-    </p>
-    <div class="form-control">
-        <label for="accountDeletePassword">确认密码:</label>
-        <input name="password" type="password" class="input input-bordered" id="accountDeletePassword" />
+<div id="accountDeactivateForm" class="modal">
+    <div class="modal-box">
+        {{ form_ajax('onDeactivate') }}
+
+        <h3>确认注销账户?</h3>
+        <p>
+            您的账户信息将会从本站删除。
+            您可以随时再次注册本站。
+        </p>
+        <div class="form-control">
+            <label class="label" for="accountDeletePassword">确认密码:</label>
+            <input name="password" type="password" class="input input-bordered" id="accountDeletePassword" />
+        </div>
+        <button type="submit" class="btn mt-6">
+            确认注销账户
+        </button>
+        <a href="#">
+            取消
+        </a>
+        {{ form_close() }}
     </div>
-    <button type="submit" class="btn btn-danger btn-wide">
-        确认注销账户
-    </button>
-    <a href="javascript:;" onclick="$('#accountDeactivateForm').toggle()">
-        取消
-    </a>
-    {{ form_close() }}
 </div>
