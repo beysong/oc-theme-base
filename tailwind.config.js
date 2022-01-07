@@ -1,6 +1,10 @@
 module.exports = {
   content: ["layouts/**/*.htm", "pages/**/*.htm", "partials/**/*.htm"],
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("daisyui"),
+  ],
   daisyui: {
     // styled: false,
     themes: [
