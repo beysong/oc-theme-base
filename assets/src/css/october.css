@@ -1,0 +1,14 @@
+.rainlab-forum .reply-form textarea {
+  @apply w-full mb-6;
+}
+.rainlab-forum .reply-form .post-area {
+  @apply pb-12;
+}
+
+.rainlab-forum .panel .list-group a {
+  @apply mr-3;
+}
+
+.rainlab-forum .panel .list-group .list-group-item {
+  @apply mb-2;
+}

@@ -3096,11 +3096,11 @@ html {
 .max-w-sm {
   max-width: 24rem;
 }
-.flex-auto {
-  flex: 1 1 auto;
-}
 .flex-1 {
   flex: 1 1 0%;
+}
+.flex-auto {
+  flex: 1 1 auto;
 }
 .flex-shrink-0 {
   flex-shrink: 0;
@@ -3110,9 +3110,6 @@ html {
 }
 .list-disc {
   list-style-type: disc;
-}
-.list-decimal {
-  list-style-type: decimal;
 }
 .grid-flow-col {
   grid-auto-flow: column;
@@ -3210,6 +3207,14 @@ html {
   padding-top: 0px;
   padding-bottom: 0px;
 }
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
 .py-36 {
   padding-top: 9rem;
   padding-bottom: 9rem;
@@ -3234,19 +3239,14 @@ html {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
 .pl-6 {
   padding-left: 1.5rem;
 }
 .pt-6 {
   padding-top: 1.5rem;
+}
+.pl-8 {
+  padding-left: 2rem;
 }
 .pt-0 {
   padding-top: 0px;
@@ -3256,12 +3256,6 @@ html {
 }
 .pb-20 {
   padding-bottom: 5rem;
-}
-.pl-4 {
-  padding-left: 1rem;
-}
-.pl-8 {
-  padding-left: 2rem;
 }
 .text-center {
   text-align: center;
@@ -3939,6 +3933,19 @@ body.top-bar-visible:before {
   color: hsla(var(--p) / var(--tw-text-opacity));
 }
 /*---------------------------------------------------- */
+.rainlab-forum .reply-form textarea {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.rainlab-forum .reply-form .post-area {
+  padding-bottom: 3rem;
+}
+.rainlab-forum .panel .list-group a {
+  margin-right: 0.75rem;
+}
+.rainlab-forum .panel .list-group .list-group-item {
+  margin-bottom: 0.5rem;
+}
 .before\:bg-gray-200::before {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
@@ -4482,10 +4489,6 @@ body.top-bar-visible:before {
 
   .lg\:w-3\/12 {
     width: 25%;
-  }
-
-  .lg\:w-1\/2 {
-    width: 50%;
   }
 
   .lg\:flex-row {
