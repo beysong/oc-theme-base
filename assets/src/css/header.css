@@ -24,7 +24,7 @@
       }
     }
     .login-block {
-      @apply border-l px-6 flex items-center;
+      @apply border-l pl-6 flex items-center;
     }
     .open-overlay {
       @apply absolute;

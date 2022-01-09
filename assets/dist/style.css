@@ -2930,6 +2930,10 @@ html {
 .relative {
   position: relative;
 }
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
 .bottom-auto {
   bottom: auto;
 }
@@ -2944,6 +2948,15 @@ html {
 }
 .bottom-0 {
   bottom: 0px;
+}
+.top-5 {
+  top: 1.25rem;
+}
+.top-8 {
+  top: 2rem;
+}
+.top-10 {
+  top: 2.5rem;
 }
 .col-span-12 {
   grid-column: span 12 / span 12;
@@ -3780,7 +3793,6 @@ body.top-bar-visible:before {
 }
 .main-header .navigation .login-block {
   padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 .main-header .navigation .open-overlay {
   position: absolute;

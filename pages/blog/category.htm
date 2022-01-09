@@ -19,15 +19,12 @@ categoryPage = "blog/category"
 ==
 <section class="page module">
     <div class="page-title">博客分类</div>
-    <div class="container flex">
-        <div class="flex-1">{% component 'blogPosts' %}</div>
-        <div class="w-full lg:w-1/3 xl:w-1/4 pl-8 py-4">
-            <div class="text-lg py-2 uppercase">Categories</div>
-            <hr>
-            <div class="py-4">
-                {% component 'blogCategories' %}
+    <div class="container grid grid-cols-12">
+        <div class="col-span-12 lg:col-span-8">{% component 'blogPosts' %}</div>
+        <div class="col-span-12 lg:col-span-4">
+            <div class="prose pl-6 pt-6 sticky top-10">
+                <h3>分类</h3>{% component 'blogCategories' %}
             </div>
         </div>
-    </div>
 
 </section>
