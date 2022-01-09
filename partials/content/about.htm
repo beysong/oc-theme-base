@@ -4,7 +4,7 @@ description = "Section About"
 ==
 {% if this.theme.block_about == '1' %}
 <section class="module {{ className|default('py-24') }}" id="about">
-    <div class="container mx-auto px-4">
+    <div class="container px-4">
         <div class="items-center flex flex-wrap">
             <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
                 <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{ this.theme.about_image|media }}" />

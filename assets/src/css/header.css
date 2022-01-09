@@ -2,7 +2,7 @@
   transition: all 0.3s ease;
   @apply bg-white shadow-md text-neutral;
   .logo img {
-    @apply ml-3 h-8;
+    @apply h-8;
   }
   .navigation-mobile {
     @apply lg:hidden flex justify-between items-center w-full bg-white;
