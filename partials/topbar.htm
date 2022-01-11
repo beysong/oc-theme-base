@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="top-bar-wrapper">
 			<div class="top-bar-contact">
-				<div class="contact-item language-select">
+				<div class="language-select space-x-1">
 					{% component "localePicker" %}
 				</div>
 				{% if this.theme.contact_phone %}
@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="follow_us">
-				<span>Follow us:</span>
+				<span>{{ 'site.followus'|_ }}:</span>
 				<div class="socials">
 					{% if this.theme.social_facebook %}
 					<a target="_blank" href="{{ this.theme.social_facebook }}" class="social__item">

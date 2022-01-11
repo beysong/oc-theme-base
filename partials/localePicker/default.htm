@@ -9,9 +9,10 @@ function onStart()
 ==
 {% set CurrentLanguage = locale %}
 {% if CurrentLanguage == 'en' %}
-<a class="dn_btn" href="#" data-request="onSwitchLocale" data-request-data="locale: 'cn'">中文</a>
+<a class="link link-hover link-primary" href="#" data-request="onSwitchLocale" data-request-data="locale: 'cn'">中文</a>
+<span>English</span>
 {% else %}
-<a class="dn_btn" href="#" data-request="onSwitchLocale" data-request-data="locale: 'en'">EN</a>
+<span>中文</span>
+<a class="link link-hover link-primary" href="#" data-request="onSwitchLocale"
+	data-request-data="locale: 'en'">English</a>
 {% endif %}
-
-{{locale}}

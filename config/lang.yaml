@@ -1,14 +1,18 @@
 en:
-    site.name: 'JCSASIA'
-    nav.home: 'Home'
-    nav.video: 'Video'
-    title.home: 'Welcome Home'
-    MORE: 'MORE'
-    'No posts found': 'No posts found'
+  site.name: "themebase"
+  site.followus: "Follow Us"
+  user.signin: "Sing In"
+  nav.home: "Home"
+  nav.video: "Video"
+  title.home: "Welcome Home"
+  MORE: "MORE"
+  "No posts found": "No posts found"
 cn:
-    site.name: 'JCSASIA'
-    nav.home: '首页'
-    nav.video: '视频'
-    title.home: '欢迎光临'
-    MORE: '更多'
-    'No posts found': '暂无数据'
+  site.name: "themebase"
+  site.followus: "关注我们"
+  user.signin: "登录"
+  nav.home: "首页"
+  nav.video: "视频"
+  title.home: "欢迎光临"
+  MORE: "更多"
+  "No posts found": "暂无数据"

@@ -1,64 +1,52 @@
 items:
     -
-        title: 首页
-        nesting: null
+        title: Home
         type: url
         url: /
         code: ''
-        reference: null
-        cmsPage: null
-        replace: null
         viewBag:
             locale:
                 cn:
-                    title: ''
+                    title: 首页
                     url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: 博客
+        title: Blog
         type: cms-page
         code: ''
         reference: blog
         viewBag:
             locale:
                 cn:
-                    title: ''
+                    title: 博客
                     url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Elements
-        nesting: null
         type: cms-page
-        url: null
         code: ''
         reference: elements
-        cmsPage: null
-        replace: null
         viewBag:
             locale:
                 cn:
-                    title: ''
+                    title: 元素
                     url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Forum
-        nesting: null
         type: cms-page
-        url: null
         code: ''
         reference: forum
-        cmsPage: null
-        replace: null
         viewBag:
             locale:
                 cn:
-                    title: ''
+                    title: 论坛
                     url: ''
             isHidden: '0'
             cssClass: ''
