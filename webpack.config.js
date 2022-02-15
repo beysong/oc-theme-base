@@ -32,16 +32,13 @@ module.exports = {
             options: {
               postcssOptions: {
                 plugins: [
-                  [
-                    "postcss-preset-env",
-                    {
-                      // 其他选项
-                    },
-                  ],
                   require("postcss-import"),
+                  require("tailwindcss/nesting"),
                   require("tailwindcss"),
-                  require("postcss-nested"),
                   require("autoprefixer"),
+                  require("postcss-preset-env")({
+                    features: { "nesting-rules": false },
+                  }),
                 ],
               },
             },
