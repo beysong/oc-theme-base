@@ -1,42 +1,95 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./assets/src/js/header.js":
-/*!*********************************!*\
-  !*** ./assets/src/js/header.js ***!
-  \*********************************/
+/***/ 930:
 /***/ (() => {
 
-eval("(function ($) {\n  var $header = $(\"#site-header\"),\n    $topbar = $header.siblings(\".top-bar\");\n\n  $(\".navigation-button-toggler\").on(\"click\", function () {\n    $(\".navigation\").toggleClass(\"is-visible\");\n    $(\".overlay-panel\").toggleClass(\"is-visible\");\n  });\n  $(\".navigation-close-button,.overlay-panel\").on(\"click\", function () {\n    $(\".navigation\").toggleClass(\"is-visible\");\n    $(\".overlay-panel\").toggleClass(\"is-invisible\");\n    if (timer) return;\n    var timer = setTimeout(() => {\n      timer = null;\n      $(\".overlay-panel\").toggleClass(\"is-visible is-invisible\");\n    }, 800);\n  });\n\n  $(\"#top-bar-js\").on(\"click\", function () {\n    $topbar.toggleClass(\"is-visible\");\n    $(\"body\").toggleClass(\"top-bar-visible\");\n  });\n  $(\".top-bar-close\").on(\"click\", function () {\n    $topbar.toggleClass(\"is-visible\");\n    $(\"body\").toggleClass(\"top-bar-visible\");\n  });\n\n  if ($header.hasClass(\"sticky-top\")) {\n    // Listen for resize events\n\n    window.addEventListener(\n      \"scroll\",\n      function (event) {\n        var timeout;\n        // If there's a timer, cancel it\n        if (timeout) {\n          window.cancelAnimationFrame(timeout);\n        }\n\n        // Setup the new requestAnimationFrame()\n        timeout = window.requestAnimationFrame(function () {\n          let scrollPosition = Math.round(window.scrollY);\n\n          let headerHeight = $header.outerHeight();\n          if (scrollPosition > headerHeight) {\n            $header.addClass(\"header--fixed\");\n          }\n          // If not, remove \"sticky\" class from header\n          else {\n            $header.removeClass(\"header--fixed\");\n          }\n        });\n      },\n      false\n    );\n\n    let scrollPosition = Math.round(window.scrollY);\n\n    let headerHeight = $header.outerHeight();\n    // If we've scrolled 60px, add \"sticky\" class to the header\n    if (scrollPosition > headerHeight) {\n      $header.addClass(\"header--fixed\");\n    }\n    // If not, remove \"sticky\" class from header\n    else {\n      $header.removeClass(\"header--fixed\");\n    }\n  }\n})(jQuery);\n\n\n//# sourceURL=webpack://themebase/./assets/src/js/header.js?");
+(function ($) {
+  var $header = $("#site-header"),
+    $topbar = $header.siblings(".top-bar");
+
+  $(".navigation-button-toggler").on("click", function () {
+    $(".navigation").toggleClass("is-visible");
+    $(".overlay-panel").toggleClass("is-visible");
+  });
+  $(".navigation-close-button,.overlay-panel").on("click", function () {
+    $(".navigation").toggleClass("is-visible");
+    $(".overlay-panel").toggleClass("is-invisible");
+    if (timer) return;
+    var timer = setTimeout(() => {
+      timer = null;
+      $(".overlay-panel").toggleClass("is-visible is-invisible");
+    }, 800);
+  });
+
+  $("#top-bar-js").on("click", function () {
+    $topbar.toggleClass("is-visible");
+    $("body").toggleClass("top-bar-visible");
+  });
+  $(".top-bar-close").on("click", function () {
+    $topbar.toggleClass("is-visible");
+    $("body").toggleClass("top-bar-visible");
+  });
+
+  if ($header.hasClass("sticky-top")) {
+    // Listen for resize events
+
+    window.addEventListener(
+      "scroll",
+      function (event) {
+        var timeout;
+        // If there's a timer, cancel it
+        if (timeout) {
+          window.cancelAnimationFrame(timeout);
+        }
+
+        // Setup the new requestAnimationFrame()
+        timeout = window.requestAnimationFrame(function () {
+          let scrollPosition = Math.round(window.scrollY);
+
+          let headerHeight = $header.outerHeight();
+          if (scrollPosition > headerHeight) {
+            $header.addClass("header--fixed");
+          }
+          // If not, remove "sticky" class from header
+          else {
+            $header.removeClass("header--fixed");
+          }
+        });
+      },
+      false
+    );
+
+    let scrollPosition = Math.round(window.scrollY);
+
+    let headerHeight = $header.outerHeight();
+    // If we've scrolled 60px, add "sticky" class to the header
+    if (scrollPosition > headerHeight) {
+      $header.addClass("header--fixed");
+    }
+    // If not, remove "sticky" class from header
+    else {
+      $header.removeClass("header--fixed");
+    }
+  }
+})(jQuery);
+
 
 /***/ }),
 
-/***/ "./assets/src/js/swiper.js":
-/*!*********************************!*\
-  !*** ./assets/src/js/swiper.js ***!
-  \*********************************/
+/***/ 693:
 /***/ (() => {
 
-eval("(function ($) {\n  var swiper = new Swiper(\".swiper\", {\n    loop: true,\n    autoplay: {\n      delay: 5500,\n      disableOnInteraction: false,\n    },\n  });\n})(Swiper);\n\n\n//# sourceURL=webpack://themebase/./assets/src/js/swiper.js?");
+(function ($) {
+  var swiper = new Swiper(".swiper", {
+    loop: true,
+    autoplay: {
+      delay: 5500,
+      disableOnInteraction: false,
+    },
+  });
+})(Swiper);
 
-/***/ }),
-
-/***/ "./assets/src/main.js":
-/*!****************************!*\
-  !*** ./assets/src/main.js ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/header */ \"./assets/src/js/header.js\");\n/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_header__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/swiper */ \"./assets/src/js/swiper.js\");\n/* harmony import */ var _js_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_swiper__WEBPACK_IMPORTED_MODULE_1__);\n// import \"./js/theme\";\n\n\n\n// (function () {\n//     const scripts = [theme];\n//     scripts.forEach((script) => script.init());\n// })();\n\n\n//# sourceURL=webpack://themebase/./assets/src/main.js?");
 
 /***/ })
 
@@ -96,23 +149,25 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./assets/src/main.js");
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(930);
+/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_header__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _js_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(693);
+/* harmony import */ var _js_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_swiper__WEBPACK_IMPORTED_MODULE_1__);
+// import "./js/theme";
+
+
+
+// (function () {
+//     const scripts = [theme];
+//     scripts.forEach((script) => script.init());
+// })();
+
+})();
+
 /******/ })()
 ;
