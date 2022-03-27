@@ -1,13 +1,13 @@
 {
-    "name": "beysong/themebase-theme",
-    "type": "october-theme",
-    "description": "october theme with some base block",
-    "require": {
-        "composer/installers": "~1.0",
-        "rainlab/user-plugin": "~1.0",
-        "rainlab/blog-plugin": "~1.0",
-        "rainlab/pages-plugin": "~1.0",
-        "rainlab/translate-plugin": "~1.0",
-        "martin/forms-plugin": "~1.0"
-    }
+  "name": "beysong/themebase-theme",
+  "type": "october-theme",
+  "description": "october theme with some base block",
+  "require": {
+    "composer/installers": "~1.0",
+    "rainlab/user-plugin": "~1.0",
+    "rainlab/blog-plugin": "~1.0",
+    "rainlab/pages-plugin": "~1.0",
+    "rainlab/translate-plugin": "~1.0",
+    "martin/forms-plugin": "~1.0"
+  }
 }
