@@ -5,6 +5,7 @@ homepage: "https://www.themeshow.cn"
 code: themebase
 form: config/fields.yaml
 require:
+  - Beysong.Wechat
   - RainLab.Pages
   - RainLab.Blog
   - RainLab.User
