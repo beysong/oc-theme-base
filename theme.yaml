@@ -1,15 +1,17 @@
 name: ThemeBase
-description: "A theme with some base block."
+description: 'A theme with some base block.'
 author: Beysong
-homepage: "https://www.themeshow.cn"
+homepage: 'https://www.themeshow.cn'
+authorCode: beysong
 code: themebase
+parent: ''
+database: '0'
 form: config/fields.yaml
 require:
-  - Beysong.Wechat
-  - RainLab.Pages
-  - RainLab.Blog
-  - RainLab.User
-  - RainLab.Translate
-  - Martin.Forms
-
+    - Beysong.Wechat
+    - RainLab.Pages
+    - RainLab.Blog
+    - RainLab.User
+    - RainLab.Translate
+    - Martin.Forms
 translate: config/lang.yaml

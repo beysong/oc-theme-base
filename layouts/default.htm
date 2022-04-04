@@ -1,25 +1,19 @@
 description = "Default"
 
-[localePicker]
-forceUrl = 0
-
 [session]
 security = "all"
+
+[localePicker]
+forceUrl = 0
 
 [staticMenu]
 code = "main"
 ==
-<?php
-function onStart()
-{
-	$this['locale'] = App::getLocale();
-}
-?>
+
 ==
-{% set CurrentLanguage = locale %}
 {% spaceless %}
 <!doctype html>
-<html lang="en" data-theme="mytheme">
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
@@ -33,10 +27,11 @@ function onStart()
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2888569_2g6qdc4cd9a.css">
     <link href="{{ [
         'assets/iconfont/iconfont.css',
-        'assets/dist/swiper.css',
+        'assets/dist/swiper.min.css',
         'assets/dist/style.css',
     ]|theme }}" rel="stylesheet">
     {% placeholder head %}
+    {% partial "style" %}
 </head>
 
 <body class="min-h-screen">
@@ -48,27 +43,9 @@ function onStart()
 
     <!-- Footer Widgets -->
     {% partial "footer/widgets" %}
-
-    <!-- 'assets/js/popper.js',
-     'assets/js/bootstrap.min.js',
-     'assets/js/stellar.js',
-     'assets/vendors/lightbox/simpleLightbox.min.js',
-     'assets/vendors/nice-select/js/jquery.nice-select.min.js',
-     'assets/vendors/isotope/imagesloaded.pkgd.min.js',
-     'assets/vendors/isotope/isotope.pkgd.min.js',
-     'assets/vendors/owl-carousel/owl.carousel.min.js',
-     'assets/vendors/jquery-ui/jquery-ui.js',
-     'assets/js/jquery.ajaxchimp.min.js',
-     'assets/vendors/popup/jquery.magnific-popup.min.js',
-     'assets/js/mail-script.js',
-     'assets/vendors/counter-up/jquery.waypoints.min.js',
-     'assets/vendors/counter-up/jquery.counterup.js', -->
-    <script src="{{ [
-            'assets/js/jquery-3.5.1.js',
-           
-            'assets/dist/swiper.js',
-            'assets/dist/main.js'
-            ]|theme }}"></script>
+    <script src="{{ 'assets/dist/jquery.min.js'|theme }}"></script>
+    <script src="{{ 'assets/dist/swiper.min.js'|theme }}"></script>
+    <script src="{{ ['assets/dist/main.js']|theme }}"></script>
     {% framework extras %}
     {% scripts %}
 

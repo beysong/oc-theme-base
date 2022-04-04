@@ -1,18 +1,14 @@
 [viewBag]
 ==
-<?php
-function onStart()
-{
-	$this['locale'] = App::getLocale();
-}
-?>
-==
-{% set CurrentLanguage = locale %}
-{% if CurrentLanguage == 'en' %}
-<a class="link link-hover link-primary" href="#" data-request="onSwitchLocale" data-request-data="locale: 'cn'">中文</a>
-<span>English</span>
-{% else %}
-<span>中文</span>
-<a class="link link-hover link-primary" href="#" data-request="onSwitchLocale"
-	data-request-data="locale: 'en'">English</a>
-{% endif %}
+
+<div class="dropdown">
+	<label tabindex="0" class="btn btn-xs">{{activeLocale}}</label>
+	<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+		{% for code, name in locales %}
+		<li>
+			<a href="#" data-request="onSwitchLocale" data-request-data="locale: '{{code}}'">{{ name }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+ 

@@ -1,6 +1,18 @@
 # Theme options
 tabs:
   fields:
+    primary_color:
+      tab: Theme Colors
+      label: Primary 
+      type: colorpicker
+      default: '#e78200'
+
+    primary_focus:
+      tab: Theme Colors
+      label: Primary Focus
+      type: colorpicker
+      default: '#e58200'
+
     ### Appearance
     # Website Details
     appearance_settings_section:

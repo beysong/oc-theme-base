@@ -1,48 +1,34 @@
+{% partial "topbar.htm" %}
 <header class="main-header sticky-top" id="site-header">
-	{% partial "topbar.htm" %}
 	<div class="container">
-		<div class="navigation-mobile">
-			<div class="navigation-logo">
-				<div class="logo">
-					<a href="/" class="full-block-link" rel="home">
-						{% if this.theme.site_logo %}
-						<img loading="lazy" src="{{ this.theme.site_logo|media }}" alt="{{ this.theme.site_name }}">
-						{% else %}
-						<img loading="lazy" src="{{ 'assets/images/logo.png'|theme }}" alt="{{ this.theme.site_name }}">
-						{% endif %}
-					</a>
-				</div>
-			</div>
-			<div id="top-bar-js" class="top-bar-link">
-				<i class="iconfont icon-info1"></i>
-			</div>
-			<div class="navigation-button-toggler">
-				<i class="iconfont icon-menu1"></i>
-			</div>
-		</div>
 
-		<div class="navigation">
-			<div class="navigation-header">
-				<div class="navigation-logo">
-					<div class="logo">
-						<a href="/" class="full-block-link" rel="home">
-							{% if this.theme.site_logo %}
-							<img loading="lazy" src="{{ this.theme.site_logo|media }}" alt="{{ this.theme.site_name }}">
-							{% else %}
-							<img loading="lazy" src="{{ 'assets/images/logo.png'|theme }}"
-								alt="{{ this.theme.site_name }}">
-							{% endif %}
-						</a>
-					</div>
+		<div class="navbar">
+			<div class="navbar-start">
+				<div class="dropdown">
+					<label tabindex="0" class="btn btn-ghost lg:hidden">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+						</svg>
+					</label>
+					{% if staticMenu.menuItems %}
+					<ul class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+						{% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
+					</ul>
+					{% endif %}
 				</div>
-				<span class="navigation-close-button">✕</span>
+				<a href="/" rel="home">
+					{% if this.theme.site_logo %}
+					<img style="height:50px;" loading="lazy" src="{{ this.theme.site_logo|media }}" alt="{{ this.theme.site_name }}">
+					{% else %}
+					<img style="height:50px;" loading="lazy" src="{{ 'assets/images/logo.png'|theme }}" alt="{{ this.theme.site_name }}">
+					{% endif %}
+				</a>
 			</div>
-			<div class="navigation-menu">
+			<div class="navbar-center hidden lg:flex">
 				{% component 'staticMenu' %}
 			</div>
 
-
-			<div class="login-block">
+			<div class="navbar-end">
 				{% if user %}
 				<a class="dn_btn" href="/user/account">{{ user.name }}</a>,&nbsp;
 				<a class="dn_btn" href="" data-request="onLogout" data-request-data="redirect: '/'"><i
@@ -53,8 +39,5 @@
 				{% endif %}
 			</div>
 		</div>
-
 	</div>
-	<div class="overlay-panel"></div>
 </header>
-{% partial "topbar.htm" %}

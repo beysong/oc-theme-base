@@ -1,53 +1,5 @@
 .main-header {
-  transition: all 0.3s ease;
-  @apply bg-white shadow-md text-neutral;
-  .logo img {
-    @apply h-8;
-  }
-  .navigation-mobile {
-    @apply lg:hidden flex justify-between items-center w-full bg-white;
-    .top-bar-link {
-      @apply ml-auto p-3 cursor-pointer;
-    }
-    .navigation-button-toggler {
-      @apply p-3 cursor-pointer;
-    }
-  }
-  .navigation {
-    transition: left 0.8s cubic-bezier(0.1, 0.1, 0.1, 0.1),
-      right 0.8s cubic-bezier(0.1, 0.1, 0.1, 0.1);
-    @apply -left-full fixed top-0 bottom-0 lg:static w-full sm:w-80 lg:w-full block lg:flex justify-between z-20 bg-white;
-    .navigation-header {
-      @apply p-3 lg:p-0 flex items-center;
-      .navigation-close-button {
-        @apply absolute right-3 top-2 text-2xl lg:hidden;
-      }
-    }
-    .login-block {
-      @apply border-l pl-6 flex items-center;
-    }
-    .open-overlay {
-      @apply absolute;
-    }
-  }
-  .navigation.is-visible {
-    transition: left 0.8s, right 0.8s;
-    @apply left-0 fixed lg:static;
-  }
-  .overlay-panel {
-    transition: opacity 0.8s;
-    background: rgba(0, 0, 0, 0.7);
-    @apply fixed w-0 h-0 top-0 bottom-0 left-0 right-0 opacity-0 z-0 lg:hidden;
-  }
-  .overlay-panel.is-visible {
-    @apply opacity-100 w-full h-full z-10;
-  }
-  .overlay-panel.is-visible {
-    @apply opacity-100 w-full h-full z-10;
-  }
-  .overlay-panel.is-invisible {
-    opacity: 0;
-  }
+  @apply bg-white relative z-10;
 }
 .main-header.header--fixed {
   @apply sticky top-0 z-10;
@@ -55,48 +7,4 @@
     @apply hidden;
   }
 }
-
-/* menu */
-.navigation-menu {
-  @apply ml-auto pr-3;
-  ul {
-    a,
-    span {
-      @apply inline-block p-3;
-    }
-  }
-  > ul {
-    @apply flex flex-col lg:flex-row;
-    li {
-      @apply relative;
-      a,
-      span {
-        @apply relative p-3;
-      }
-      a:hover,
-      span:hover {
-        @apply text-primary;
-      }
-
-      ul {
-        box-shadow: 15px 15px 30px rgb(0 0 0 / 16%);
-        transition: opacity 0.3s linear, max-height 0s linear 0.15s, margin 0.3s;
-        min-width: 200px;
-        @apply rounded-lg z-10 bg-white absolute left-0 top-full hidden;
-      }
-    }
-
-    > li:hover {
-      ul {
-        transition: opacity 0.3s linear, max-height 0s linear 0.15s, margin 0.3s;
-        @apply block;
-      }
-    }
-    li.active,
-    .child-active {
-      > a {
-        @apply text-primary;
-      }
-    }
-  }
-}
+ 

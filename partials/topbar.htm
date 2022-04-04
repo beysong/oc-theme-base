@@ -3,8 +3,8 @@
 <div class="top-bar" id="top-bar">
 	<div class="container">
 		<div class="top-bar-wrapper">
-			<div class="top-bar-contact">
-				<div class="language-select space-x-1">
+			<div class="flex items-center space-x-2">
+				<div class="language-select">
 					{% component "localePicker" %}
 				</div>
 				{% if this.theme.contact_phone %}
@@ -39,7 +39,6 @@
 					{% endif %}
 				</div>
 			</div>
-			<i class="top-bar-close iconfont icon-close"></i>
 
 		</div>
 
