@@ -1,20 +1,30 @@
 # Theme options
 tabs:
   fields:
+
+    ### Appearance
+    # Website Details
+
+    site_logo:
+      tab: Appearance
+      label: Image
+      type: mediafinder
+      mode: image
+
     primary_color:
-      tab: Theme Colors
+      tab: Appearance
       label: Primary 
+      span: left
       type: colorpicker
       default: '#e78200'
 
     primary_focus:
-      tab: Theme Colors
+      tab: Appearance
       label: Primary Focus
+      span: right
       type: colorpicker
       default: '#e58200'
-
-    ### Appearance
-    # Website Details
+      
     appearance_settings_section:
       tab: Appearance
       label: Website Details
@@ -89,6 +99,7 @@ tabs:
       label: Header Video
       type: text
       cssClass: form_container
+
 
     ## Block Features
     block_features:

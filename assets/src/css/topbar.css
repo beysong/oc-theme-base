@@ -1,14 +1,11 @@
 /*------------- #rulles for top-bar in header --------------*/
 .top-bar {
-  @apply border-b border-gray-200 bg-white rounded-b-lg text-neutral;
+  @apply border-b border-gray-200 bg-white text-neutral;
   .top-bar-wrapper {
-    @apply flex justify-between relative py-3;
-    .follow_us,
+    @apply flex justify-between py-3;
+     
     .socials {
-      @apply flex;
-      a {
-        @apply ml-3;
-      }
+      @apply space-x-2; 
     }
   }
 }

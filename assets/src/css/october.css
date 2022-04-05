@@ -12,3 +12,13 @@
 .rainlab-forum .panel .list-group .list-group-item {
   @apply mb-2;
 }
+
+.form-group, .lead{
+  @apply mb-4;
+  label{
+    @apply font-bold;
+  }
+  .form-control{
+    @apply block w-full;
+  }
+}

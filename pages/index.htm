@@ -2,44 +2,15 @@ title = "index"
 url = "/"
 layout = "default"
 description = "Index page"
-meta_title = "冷链"
-meta_description = "冷链"
 is_hidden = 0
 
-[viewBag]
-localeTitle[cn] = "首页"
-localeUrl[cn] = "/"
-localeDescription[cn] = "首页"
-
-[records Partner]
-activeOnly = 1
-areaSlug = 0
-categorySlug = "{{ :category }}"
-tagSlug = "{{ :tag }}"
-recordPage = 0
-recordPageSlug = "{{ :record }}"
-limit = 100
-pageSlug = "{{ :page }}"
-orderBy = "name"
-orderByDirection = "ASC"
 ==
-<?php
-function onStart()
-{
-	$this['locale'] = App::getLocale();
-}
-?>
-==
-{% set CurrentLanguage = locale %}
 
 <div class="page">
-
 	{% partial 'content/sliders' %}
 	{% partial 'content/features' %}
 	{% partial 'content/about' className="py-0" %}
-
 	{% partial 'content/testimonials' %}
-
 	{% partial 'content/team' %}
 	{% partial 'content/tryout' %}
 </div>

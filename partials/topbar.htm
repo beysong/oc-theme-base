@@ -18,26 +18,23 @@
 				</div>
 				{% endif %}
 			</div>
-
-			<div class="follow_us">
+			<div class="socials">
 				<span>{{ 'site.followus'|_ }}:</span>
-				<div class="socials">
-					{% if this.theme.social_facebook %}
-					<a target="_blank" href="{{ this.theme.social_facebook }}" class="social__item">
-						<i class="iconfont icon-Facebook"></i>
-					</a>
-					{% endif %}
-					{% if this.theme.social_twitter %}
-					<a target="_blank" href="{{ this.theme.social_twitter }}" class="social__item">
-						<i class="iconfont icon-twitter"></i>
-					</a>
-					{% endif %}
-					{% if this.theme.social_linkedin %}
-					<a target="_blank" href="{{ this.theme.social_linkedin }}" class="social__item">
-						<i class="iconfont icon-linkedin"></i>
-					</a>
-					{% endif %}
-				</div>
+				{% if this.theme.social_facebook %}
+				<a target="_blank" href="{{ this.theme.social_facebook }}" class="social__item">
+					<i class="iconfont icon-Facebook"></i>
+				</a>
+				{% endif %}
+				{% if this.theme.social_twitter %}
+				<a target="_blank" href="{{ this.theme.social_twitter }}" class="social__item">
+					<i class="iconfont icon-twitter"></i>
+				</a>
+				{% endif %}
+				{% if this.theme.social_linkedin %}
+				<a target="_blank" href="{{ this.theme.social_linkedin }}" class="social__item">
+					<i class="iconfont icon-linkedin"></i>
+				</a>
+				{% endif %}
 			</div>
 
 		</div>
