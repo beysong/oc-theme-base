@@ -1,6 +1,6 @@
 /*------------- #rulles for top-bar in header --------------*/
 .top-bar {
-  @apply border-b border-gray-200 bg-white text-neutral;
+  @apply bg-white text-neutral border-b border-gray-100;
   .top-bar-wrapper {
     @apply flex justify-between py-3;
      

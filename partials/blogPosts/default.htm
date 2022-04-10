@@ -1,31 +1,35 @@
 {% set posts = __SELF__.posts %}
-
-<div class="post-list">
+ 
+<article class="max-w-none prose prose-a:no-underline prose-a:font-normal">
     {% for post in posts %}
-    <div class="py-5">
-        <h3 class="text-lg"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-
-        <p class="text-gray-400 my-3">
+    <div class="mb-16">
+        {% if post.featured_image %}
+        <div>
+            <img class="max-w-full" data-src="{{ post.featured_image|media }}" src="{{ post.featured_image|media }}" alt="{{ post.title }}" />
+        </div>
+        {% endif %}
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p>
             Posted
             {% if post.categories.count %} in {% endif %}
             {% for category in post.categories %}
-            <a href="{{ category.url }}" class="text-gray-800 text-sm">{{ category.name }}</a>{% if not loop.last
+            <a href="{{ category.url }}" class="link link-primary">{{ category.name }}</a>{% if not loop.last
             %}, {%
             endif
             %}
             {% endfor %}
             on {{ post.published_at|date('M d, Y') }}
         </p>
-
-        <div class="text-gray-400">{{ post.summary|raw }}</div>
+        <p class="text-gray-500">{{ post.summary|raw }}</p>
+        <p><a href="{{ post.url }}">Read more</a></p>
     </div>
     {% else %}
-    <li class="no-data">{{ __SELF__.noPostsMessage }}</li>
+    <p class="no-data">{{ __SELF__.noPostsMessage }}</p>
     {% endfor %}
-</div>
+</article>
 
 {% if posts.lastPage > 1 %}
-<div class="btn-group">
+<div class="btn-group justify-center">
     {% if posts.currentPage > 1 %}
     <a class="btn" href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage-1) }) }}">&larr;
     </a>

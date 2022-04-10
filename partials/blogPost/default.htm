@@ -1,31 +1,46 @@
+==
+function onStart()
+{
+$this['logined'] = Auth::check();
+}
+==
 {% set post = __SELF__.post %}
-<div class="page-title">
-    {{post.title}}
-</div>
-<div class="container p-4 prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl mt-8">
 
-    <div>
-        {{ post.content_html|raw }}
-    </div>
-
+<div class="prose max-w-none prose-a:no-underline">
     {% if post.featured_images.count %}
-    <div class="featured-images text-center img">
+    <div class="carousel w-full">
         {% for image in post.featured_images %}
-        <div>
+        <div id="slide{{loop.index0}}" class="carousel-item w-full relative">
             <img data-src="{{ image.filename }}" src="{{ image.path }}" alt="{{ image.description }}"
-                style="max-width: 100%" />
+                class="w-full max-width-full" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide{{(loop.index0-1+loop.length)%loop.length}}" class="btn btn-circle">❮</a>
+                <a href="#slide{{(loop.index0+1)%loop.length}}" class="btn btn-circle">❯</a>
+            </div>
         </div>
         {% endfor %}
     </div>
     {% endif %}
 
-    <p class="text-gray-400 my-5">
+    <h1 class="text-xl">{{post.title}}</h1>
+    <p>
         Posted
         {% if post.categories.count %} in
         {% for category in post.categories %}
-        <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+        <a class="link link-primary" href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
         {% endfor %}
         {% endif %}
         on {{ post.published_at|date('M d, Y') }}
     </p>
+ 
 </div>
+
+{% if logined %}
+<div class="prose max-w-none prose-a:no-underline prose-a:font-normal">
+    {{ post.content_html|raw }}
+</div>
+{% else %}
+    {{ post.summary|raw }}
+    <div class="divider">please login first</div>
+    <div class="flex justify-center">{% partial 'loginModal' %}</div>
+{% endif %}

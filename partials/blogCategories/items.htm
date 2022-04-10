@@ -1,13 +1,13 @@
 {% for category in categories %}
 {% set postCount = category.post_count %}
-<li {% if category.slug==currentCategorySlug %}class="active" {% endif %}>
-    <a href="{{ category.url }}">{{ category.name }}</a>
-    {% if postCount %}
+<li>
+    <a class="{% if category.slug==currentCategorySlug %}active{% endif %}" href="{{ category.url }}">{{ category.name }} {% if postCount %}
     <span class="badge ml-2">{{ postCount }}</span>
-    {% endif %}
+    {% endif %}</a>
+    
 
     {% if category.children|length > 0 %}
-    <ul class="list">
+    <ul class="menu">
         {% partial __SELF__ ~ "::items"
         categories=category.children
         currentCategorySlug=currentCategorySlug

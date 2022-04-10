@@ -1,6 +1,6 @@
-title = "Blog"
-url = "/blog/:page?"
+url = "/blog/:slug/:page?"
 layout = "default"
+title = "Blog"
 is_hidden = 0
 
 [viewBag]
@@ -18,17 +18,23 @@ postPage = "blog/post"
 [blogCategories]
 slug = "{{ :slug }}"
 displayEmpty = 0
-categoryPage = "blog/category"
+categoryPage = "blog"
 ==
+
 <section class="page">
-    <div class="page-title">博客</div>
-    <div class="container grid grid-cols-12">
-        <div class="col-span-12 lg:col-span-8">
-            {% component 'blogPosts' %}
+    <div class="page-title">
+        <h2>{{ category.name|default('博客') }}</h2>
+        <p>{{ category.description }}</p>
+    </div>
+    <div class="container grid grid-cols-12 pb-10">
+        <div class="col-span-12 lg:col-span-8 xl:col-span-9">
+            <div class="container">
+                {% component 'blogPosts' %}
+            </div>
         </div>
-        <div class="col-span-12 lg:col-span-4">
-            <div class="prose pl-6 pt-6 sticky top-10">
-                <h3>分类</h3>
+        <div class="col-span-12 lg:col-span-4 xl:col-span-3">
+            <div class="pt-6 sticky top-10">
+                <h3 class="text-xl mb-4">分类</h3>
                 {% component 'blogCategories' %}
             </div>
         </div>

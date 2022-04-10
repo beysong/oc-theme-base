@@ -1,5 +1,5 @@
 .main-header {
-  @apply bg-white relative z-10;
+  @apply bg-white relative z-10 shadow-sm;
 }
 .main-header.header--fixed {
   @apply sticky top-0 z-10;

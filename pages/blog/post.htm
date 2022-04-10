@@ -1,6 +1,6 @@
-title = "Blog Post"
 url = "/blog/post/:slug"
 layout = "default"
+title = "Blog Post"
 is_hidden = 0
 
 [blogPost]
@@ -11,10 +11,54 @@ categoryPage = "blog/category"
 embedCode = "{{ :slug }}"
 channelSlug = "blog-comments"
 memberPage = "user/account"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+
 ==
+<?php
+
+use RainLab\Blog\Models\Post as BlogPost;
+
+function onStart()
+{
+	$this['may_like'] = BlogPost::inRandomOrder()->take(5)->get();
+}
+?>
+==
+
 <section class="page module">
-    <div>{% component 'blogPost' %}</div>
-    <div class="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto p-4">
-        {% component 'forumEmbedTopic' %}
+    <div class="container">
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 lg:col-span-9">
+                <div class="container">
+                    {% component 'blogPost' %}
+                    <div class="prose max-w-none">
+                        {% component 'forumEmbedTopic' %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-3">
+                 <div class="py-5 sticky top-10">
+                     <h3 class="text-lg my-5">猜你喜欢</h3>
+                     <ul class="space-y-4">
+                        {% for pos in may_like %}
+                         <li class="flex items-start">
+                            {% if pos.featured_image %}
+                                <img class="w-1/5 bg-gray-50 mr-2" src="{{pos.featured_image|media}}" />
+                            {% endif %}
+                             <div class="flex-1">
+                                <p class="text-gray-600"><a href="">{{pos.title}}</a></p>
+                                <p class="text-sm text-gray-400">{{pos.published_at|date('M d, Y')}}</p>
+                             </div>
+                         </li>
+                         {% endfor %}
+                     </ul>
+                 </div>
+            </div>
+        </div>
+        
     </div>
 </section>
