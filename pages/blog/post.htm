@@ -24,7 +24,11 @@ use RainLab\Blog\Models\Post as BlogPost;
 
 function onStart()
 {
-	$this['may_like'] = BlogPost::inRandomOrder()->take(5)->get();
+	$posts = BlogPost::inRandomOrder()->take(5)->get();
+    $posts->each(function($post) {
+        $post->setUrl($this->postPage, $this->controller, []);
+    });
+    $this['may_like'] = $posts;
 }
 ?>
 ==
@@ -33,9 +37,9 @@ function onStart()
     <div class="container">
         <div class="grid grid-cols-12">
             <div class="col-span-12 lg:col-span-9">
-                <div class="container">
+                <div class="container pt-10">
                     {% component 'blogPost' %}
-                    <div class="prose max-w-none">
+                    <div class="prose max-w-none mt-10">
                         {% component 'forumEmbedTopic' %}
                     </div>
                 </div>
@@ -50,7 +54,7 @@ function onStart()
                                 <img class="w-1/5 bg-gray-50 mr-2" src="{{pos.featured_image|media}}" />
                             {% endif %}
                              <div class="flex-1">
-                                <p class="text-gray-600"><a href="">{{pos.title}}</a></p>
+                                <p class="text-gray-600"><a href="{{pos.url}}">{{pos.title}}</a></p>
                                 <p class="text-sm text-gray-400">{{pos.published_at|date('M d, Y')}}</p>
                              </div>
                          </li>

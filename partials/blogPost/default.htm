@@ -35,12 +35,13 @@ $this['logined'] = Auth::check();
  
 </div>
 
-{% if logined %}
+{% if logined or not post.custom_fields.switch %}
 <div class="prose max-w-none prose-a:no-underline prose-a:font-normal">
     {{ post.content_html|raw }}
 </div>
 {% else %}
     {{ post.summary|raw }}
-    <div class="divider">please login first</div>
-    <div class="flex justify-center">{% partial 'loginModal' %}</div>
+    <div class="divider my-10">please login first</div>
+    <div class="flex justify-center my-10">{% partial 'loginModal' %}</div>
+    <div class="flex justify-center my-10">{% partial 'registerModal' %}</div>
 {% endif %}

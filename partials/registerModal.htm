@@ -1,0 +1,42 @@
+
+<!-- Put this part before </body> tag -->
+<input type="checkbox" id="my-modal-register" class="modal-toggle">
+<div class="modal">
+	<div class="modal-box relative">
+		<label for="my-modal-register" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+		<h3 class="text-lg font-bold">Register</h3>
+		
+		<div class="my-5">
+	
+			{{ form_ajax('onRegister') }}
+			
+			<div class="form-control">
+				<label class="label" for="registerName">Full Name</label>
+				<input name="name" type="text" class="input input-bordered" id="registerName" placeholder="Enter your full name" />
+			</div>
+			
+			<div class="form-control">
+				<label class="label" for="registerEmail">Email</label>
+				<input name="email" type="email" class="input input-bordered" id="registerEmail" placeholder="Enter your email" />
+			</div>
+			
+			{% if loginAttribute == "username" %}
+			<div class="form-control">
+				<label class="label" for="registerUsername">Username</label>
+				<input name="username" type="text" class="input input-bordered" id="registerUsername" placeholder="Enter your username" />
+			</div>
+			{% endif %}
+			
+			<div class="form-control">
+				<label class="label" for="registerPassword">Password</label>
+				<input name="password" type="password" class="input input-bordered" id="registerPassword" placeholder="Choose a password" />
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary mt-5">Register</button> <label class="link link-primary ml-2" for="my-modal-register">Login</label>
+			</div>
+			
+			{{ form_close() }}
+
+		</div>
+	</div>
+</div>

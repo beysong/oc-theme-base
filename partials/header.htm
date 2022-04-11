@@ -32,7 +32,7 @@
 			<div class="navbar-end">
 				{% if user %}
 				<a class="dn_btn" href="/user/account">{{ user.name }}</a>,&nbsp;
-				<a class="dn_btn" href="" data-request="onLogout" data-request-data="redirect: '/'"><i
+				<a class="dn_btn" href="" data-request="onLogout"><i
 						class="iconfont icon-sign-out"></i></a>
 				{% else %}
 				<a class="js-window-popup" href="/user/account">{{ 'user.signin'|_ }} <i

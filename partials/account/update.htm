@@ -1,6 +1,17 @@
 [viewBag]
 ==
-{{ form_ajax("onUpdate") }}
+{{ form_ajax("onUpdate",{files:true}) }}
+
+<div class="form-control"> 
+    <input type="file" class="form-control-file" name="avatar" id="avatar"
+        aria-describedby="fileHelp" /> 
+</div>
+    <div class="avatar">
+        <div class="w-24 rounded">
+            <img src="{{user.avatar.path}}" />
+        </div>
+    </div>
+ 
 
 <div class="form-control">
     <label class="label" for="accountName">姓名</label>
