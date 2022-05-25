@@ -5,8 +5,8 @@
 
   <form data-request="onRegister">
     <div class="form-control">
-      <label class="label" for="grid-password">姓名</label>
-      <input name="name" type="text" id="registerName" class="input input-bordered" placeholder="姓名"
+      <label class="label" for="grid-password">Full Name</label>
+      <input name="name" type="text" id="registerName" class="input input-bordered" placeholder="Full Name"
         style="transition: all 0.15s ease 0s;" />
     </div>
 
@@ -18,17 +18,17 @@
 
     {% if loginAttribute == "username" %}
     <div class="form-control">
-      <label class="label" for="registerUsername">账号</label>
+      <label class="label" for="registerUsername">Account</label>
       <input name="username" type="text" class="input input-bordered" id="registerUsername" placeholder="请输入账号" />
     </div>
     {% endif %}
 
     <div class="form-control">
-      <label class="label" for="registerPassword">密码</label>
+      <label class="label" for="registerPassword">Password</label>
       <input name="password" type="password" class="input input-bordered" id="registerPassword" placeholder="请输入密码" />
     </div>
     <div class="mt-6">
-      <button type="submit" class="btn btn-primary btn-wide">注册</button>
+      <button type="submit" class="btn btn-primary btn-wide">Register</button>
     </div>
   </form>
   <div class="flex flex-wrap mt-6">

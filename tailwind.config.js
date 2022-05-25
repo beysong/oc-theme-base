@@ -1,5 +1,10 @@
 module.exports = {
-  content: ["layouts/**/*.htm", "pages/**/*.htm", "partials/**/*.htm"],
+  content: [
+    "layouts/**/*.htm",
+    "pages/**/*.htm",
+    "partials/**/*.htm",
+    "assets/src/**/*.js",
+  ],
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms")({
@@ -20,6 +25,6 @@ module.exports = {
     },
   },
   daisyui: {
-    themes:['light']
+    themes: ["light"],
   },
 };

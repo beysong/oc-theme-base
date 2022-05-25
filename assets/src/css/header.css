@@ -1,8 +1,16 @@
 .main-header {
-  @apply bg-white relative z-10 shadow-sm;
+  @apply bg-white relative z-10 shadow-sm transition-all duration-500;
 }
+
 .main-header.header--fixed {
   @apply sticky top-0 z-10;
+  .top-bar {
+    @apply hidden;
+  }
+}
+
+.main-header.header--hidden {
+  @apply sticky -top-full z-10;
   .top-bar {
     @apply hidden;
   }

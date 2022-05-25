@@ -2,19 +2,22 @@
 ==
 {{ form_ajax("onUpdate",{files:true}) }}
 
-<div class="form-control"> 
-    <input type="file" class="form-control-file" name="avatar" id="avatar"
-        aria-describedby="fileHelp" /> 
-</div>
-    <div class="avatar">
+<div class="flex items-center">
+    <div class="avatar mr-2">
         <div class="w-24 rounded">
             <img src="{{user.avatar.path}}" />
         </div>
     </div>
+    <div class="form-control">
+        <label class="btn btn-outline btn-sm" for="avatar">Change
+            <input type="file" class="hidden" name="avatar" id="avatar" aria-describedby="fileHelp" /></label>
+        
+    </div>
+</div>
  
 
 <div class="form-control">
-    <label class="label" for="accountName">姓名</label>
+    <label class="label" for="accountName">Full Name</label>
     <input name="name" type="text" class="input input-bordered" id="accountName" value="{{ user.name }}" />
 </div>
 
@@ -24,17 +27,17 @@
 </div>
 
 <div class="form-control">
-    <label class="label" for="accountPassword">新密码</label>
+    <label class="label" for="accountPassword">New Password</label>
     <input name="password" type="password" class="input input-bordered" id="accountPassword" />
 </div>
 
 <div class="form-control">
-    <label class="label" for="accountPasswordConfirm">确认密码</label>
+    <label class="label" for="accountPasswordConfirm">Confirm Password</label>
     <input name="password_confirmation" type="password" class="input input-bordered" id="accountPasswordConfirm" />
 </div>
 
 <div class="mt-6">
-    <button type="submit" class="btn btn-default btn-wide">保存</button>
+    <button type="submit" class="btn btn-primary btn-wide">Save</button>
 </div>
 
 
