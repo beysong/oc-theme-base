@@ -7,20 +7,20 @@ tabs:
 
     site_logo:
       tab: Appearance
-      label: Image
+      label: Logo
       type: mediafinder
       mode: image
 
     primary_color:
       tab: Appearance
-      label: Primary 
+      label: Primary Color
       span: left
       type: colorpicker
       default: '#e78200'
 
     primary_focus:
       tab: Appearance
-      label: Primary Focus
+      label: Primary Focus Color
       span: right
       type: colorpicker
       default: '#e58200'
@@ -32,11 +32,11 @@ tabs:
       type: section
 
     # Header Settings
-    appearance_header_section:
-      tab: Appearance
-      label: Header Settings
-      span: right
-      type: section
+    # appearance_header_section:
+    #   tab: Appearance
+    #   label: Header Settings
+    #   span: right
+    #   type: section
 
     site_name:
       tab: Appearance
@@ -45,17 +45,17 @@ tabs:
       type: text
       translatable: true
 
-    frontend_header_type:
-      tab: Appearance
-      span: right
-      label: Select type of Header for Frontpage
-      type: dropdown
-      showSearch: false
-      placeholder: -- select a header type --
-      options:
-        image: Image
-        slideshow: Slideshow
-        video: Video
+    # frontend_header_type:
+    #   tab: Appearance
+    #   span: right
+    #   label: Select type of Header for Frontpage
+    #   type: dropdown
+    #   showSearch: false
+    #   placeholder: -- select a header type --
+    #   options:
+    #     image: Image
+    #     slideshow: Slideshow
+    #     video: Video
 
     main_slider:
       tab: Appearance
@@ -106,7 +106,7 @@ tabs:
       tab: Features
       span: full
       label: Tick to activate the "Features" block on your frontpage
-      comment: This Block shows a set of Features with an icon, title and text. For the best appearance, you need to use exactly 4 Feature items. Choose icons from here www.rhythm.nikadevs.com/content/icons-et-line.
+      comment: This Block shows a set of Features with an icon, title and text.
       type: switch
       on: On
       off: Off
@@ -225,6 +225,7 @@ tabs:
       span: left
       label: Title
       type: text
+      translatable: true
 
     ## Block Team
     # Team Form
@@ -299,11 +300,13 @@ tabs:
       span: left
       label: Title
       type: text
+      translatable: true
     block_team_subtitle:
       tab: Team
       span: left
       label: Sub-Title
       type: text
+      translatable: true
 
     ## Block Testimonials
     # Testimonials Form

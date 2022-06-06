@@ -4,9 +4,9 @@ description = "Section Testimonials"
 ==
 {% if this.theme.block_testimonials == '1' %}
 {% set fpTestimonial = this.theme.block_testimonials_repeater %}
-<section class="module bg-fixed {{ className|default('py-36') }} bg-gray-900 text-white parallax-bg testimonial"
-    style="background-image: url({{this.theme.block_testimonials_image|media }});background-position: center center;">
-    <div class="swiper">
+<section class="module bg-fixed {{ className|default('py-36') }} bg-gray-900 text-white parallax-bg bg-center testimonial"
+    style="background-image: url({{this.theme.block_testimonials_image|media }})">
+    <div class="swiper commonSwiper">
         <ul class="swiper-wrapper">
 
             {% if fpTestimonial is not empty %}
