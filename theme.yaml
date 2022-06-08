@@ -2,7 +2,7 @@ name: ThemeBase
 description: 'A theme with some base block.'
 author: Beysong
 homepage: 'https://www.themeshow.cn'
-authorCode: beysong
+authorCode: Beysong
 code: themebase
 parent: ''
 database: '0'
